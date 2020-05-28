@@ -20,22 +20,22 @@ class userdata{
 	String number;
 }
 
-//Ã¹¹øÂ° È­¸é
-//´çÀÏ±Ç ±¸¸Å+ Á¤±âÀÌ¿ë±Ç ±¸¸Å + ÀÔ½Ç/Åğ½Ç + ±â°£ÀÚÀ¯¼® ÀÚ¸®¼±ÅÃ + ÁÂ¼® ÀÌµ¿ + »ç¹°ÇÔ ´ë¿© + ½ºÅÍµğ·ë ¿¹¾à
+//ì²«ë²ˆì§¸ í™”ë©´//
+//ë‹¹ì¼ê¶Œ êµ¬ë§¤+ ì •ê¸°ì´ìš©ê¶Œ êµ¬ë§¤ + ì…ì‹¤/í‡´ì‹¤ + ê¸°ê°„ììœ ì„ ìë¦¬ì„ íƒ + ì¢Œì„ ì´ë™ + ì‚¬ë¬¼í•¨ ëŒ€ì—¬ + ìŠ¤í„°ë””ë£¸ ì˜ˆì•½
 class FirstFrame extends JFrame{
 	
 	
 	
 	JLabel posseat = new JLabel();
 	JLabel time = new JLabel();
-	JButton Button1 = new JButton("´çÀÏ±Ç ±¸¸Å");
-	JButton Button2 = new JButton("Á¤±â/½Ã°£±Ç ±¸¸Å");
-	JButton Button3 = new JButton("ÀÔ½Ç");
-	JButton Button4 = new JButton("Åğ½Ç");
-	JButton Button5 = new JButton("±â°£ÀÚÀ¯¼®\n ÀÚ¸®¼±ÅÃ");
-	JButton Button6 = new JButton("»ç¹°ÇÔ ´ë¿©");
-	//JButton Button7 = new JButton("½ºÅÍµğ·ë ¿¹¾à");
-	//JButton Button8 = new JButton("ÁÂ¼®ÀÌµ¿");
+	JButton Button1 = new JButton("ë‹¹ì¼ê¶Œ êµ¬ë§¤");
+	JButton Button2 = new JButton("ì •ê¸°/ì‹œê°„ê¶Œ êµ¬ë§¤");
+	JButton Button3 = new JButton("ì…ì‹¤");
+	JButton Button4 = new JButton("í‡´ì‹¤");
+	JButton Button5 = new JButton("ê¸°ê°„ììœ ì„\n ìë¦¬ì„ íƒ");
+	JButton Button6 = new JButton("ì‚¬ë¬¼í•¨ ëŒ€ì—¬");
+	//JButton Button7 = new JButton("ìŠ¤í„°ë””ë£¸ ì˜ˆì•½");
+	//JButton Button8 = new JButton("ì¢Œì„ì´ë™");
 	
 	public FirstFrame() {
 		
@@ -83,7 +83,7 @@ class EventHandler implements ActionListener{
 	}
 }
 
-//ÁÂ¼® ¼±ÅÃ + È¨¹öÆ° ±â´É Ãß°¡
+//ì¢Œì„ ì„ íƒ + í™ˆë²„íŠ¼ ê¸°ëŠ¥ ì¶”ê°€
 class SecondFrame extends JFrame{
 	JButton seat1 = new JButton("1");
 	
@@ -97,14 +97,14 @@ class SecondFrame extends JFrame{
 	}
 }
 
-//´çÀÏ±Ç ±¸¸Å
+//ë‹¹ì¼ê¶Œ êµ¬ë§¤
 class BuyFrame extends JFrame{
 	
-	//ÁÂ¼®¼±ÅÃ
+	//ì¢Œì„ì„ íƒ
 	
 }
 
-//½Ã°£/Á¤±â±Ç ±¸¸Å
+//ì‹œê°„/ì •ê¸°ê¶Œ êµ¬ë§¤
 class BuyFrame2 extends JFrame{
 	
 }
