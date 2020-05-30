@@ -16,8 +16,8 @@ public class User {
 	
 	
 	public static void main(String[] args) {
-		new FirstFrame();
-		new InsertNumber();
+		//new FirstFrame();
+		//new InsertNumber();
 	}
 	
 }
