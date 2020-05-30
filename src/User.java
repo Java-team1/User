@@ -2,6 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.*;
+import javax.swing.text.html.*;
 
 public class User {
 	userdata[] Data = new userdata[200];
@@ -20,52 +21,60 @@ class userdata{
 	String number;
 }
 
-//Ã¹¹øÂ° È­¸é
-//´çÀÏ±Ç ±¸¸Å+ Á¤±âÀÌ¿ë±Ç ±¸¸Å + ÀÔ½Ç/Åğ½Ç + ±â°£ÀÚÀ¯¼® ÀÚ¸®¼±ÅÃ + ÁÂ¼® ÀÌµ¿ + »ç¹°ÇÔ ´ë¿© + ½ºÅÍµğ·ë ¿¹¾à
+//ì²«ë²ˆì§¸ í™”ë©´
+//ë‹¹ì¼ê¶Œ êµ¬ë§¤+ ì •ê¸°ì´ìš©ê¶Œ êµ¬ë§¤ + ì…ì‹¤/í‡´ì‹¤ + ê¸°ê°„ììœ ì„ ìë¦¬ì„ íƒ + ì¢Œì„ ì´ë™ + ì‚¬ë¬¼í•¨ ëŒ€ì—¬ + ìŠ¤í„°ë””ë£¸ ì˜ˆì•½
 class FirstFrame extends JFrame{
 	
 	
+	String b2 = "<html>" + "ì •ê¸°/ì‹œê°„ê¶Œ" + "<br>" + "êµ¬ë§¤" + "</html>";
+	String b5 = "<html>" + "ê¸°ê°„ììœ ì„" + "<br>" + "ìë¦¬ì„ íƒ" + "</html>";
 	
 	JLabel posseat = new JLabel();
 	JLabel time = new JLabel();
-	JButton Button1 = new JButton("´çÀÏ±Ç ±¸¸Å");
-	JButton Button2 = new JButton("Á¤±â/½Ã°£±Ç ±¸¸Å");
-	JButton Button3 = new JButton("ÀÔ½Ç");
-	JButton Button4 = new JButton("Åğ½Ç");
-	JButton Button5 = new JButton("±â°£ÀÚÀ¯¼®\n ÀÚ¸®¼±ÅÃ");
-	JButton Button6 = new JButton("»ç¹°ÇÔ ´ë¿©");
-	//JButton Button7 = new JButton("½ºÅÍµğ·ë ¿¹¾à");
-	//JButton Button8 = new JButton("ÁÂ¼®ÀÌµ¿");
+	JButton Button1 = new JButton("ë‹¹ì¼ê¶Œ êµ¬ë§¤");
+	JButton Button2 = new JButton(b2);
+	JButton Button3 = new JButton("ì…ì‹¤");
+	JButton Button4 = new JButton("í‡´ì‹¤");
+	JButton Button5 = new JButton(b5);
+	JButton Button6 = new JButton("ì‚¬ë¬¼í•¨ ëŒ€ì—¬");
+	//JButton Button7 = new JButton("ìŠ¤í„°ë””ë£¸ ì˜ˆì•½");
+	//JButton Button8 = new JButton("ì¢Œì„ì´ë™");
 	
 	public FirstFrame() {
-		
+		getContentPane().setBackground(Color.BLACK);
 		setVisible(true);
 		setSize(900,1000);
 		setLayout(null);
 		
 		Button1.setBackground(Color.orange);
 		Button1.setBounds(60,400,150,150);
+		Button1.setFont(new Font("ë§‘ì€ê³ ë”•",Font.BOLD, 20));
 		add(Button1);
 		Button1.addActionListener(new EventHandler());
 		
 		Button2.setBackground(Color.orange);
 		Button2.setBounds(260,400,150,150);
+		//Button2.setFont(new Font("ë§‘ì€ê³ ë”•",Font.BOLD,20));
 		add(Button2);
 		
 		Button5.setBackground(Color.orange);
 		Button5.setBounds(460,400,150,150);
+		//Button5.setFont(new Font("ë§‘ì€ê³ ë”•",Font.BOLD, 20));
 		add(Button5);
 		
 		Button6.setBackground(Color.orange);
 		Button6.setBounds(660,400,150,150);
+		Button6.setFont(new Font("ë§‘ì€ê³ ë”•",Font.BOLD, 20));
 		add(Button6);
 		
 		Button3.setBackground(Color.orange);
 		Button3.setBounds(460,600,150,150);
+		Button3.setFont(new Font("ë§‘ì€ê³ ë”•",Font.BOLD, 20));
 		add(Button3);
 		
 		Button4.setBackground(Color.orange);
 		Button4.setBounds(660,600,150,150);
+		Button4.setFont(new Font("ë§‘ì€ê³ ë”•",Font.BOLD, 20));
 		add(Button4);
 		
 	}
@@ -83,7 +92,7 @@ class EventHandler implements ActionListener{
 	}
 }
 
-//ÁÂ¼® ¼±ÅÃ + È¨¹öÆ° ±â´É Ãß°¡
+//ì¢Œì„ ì„ íƒ + í™ˆë²„íŠ¼ ê¸°ëŠ¥ ì¶”ê°€
 class SecondFrame extends JFrame{
 	JButton seat1 = new JButton("1");
 	
@@ -97,14 +106,14 @@ class SecondFrame extends JFrame{
 	}
 }
 
-//´çÀÏ±Ç ±¸¸Å
+//ë‹¹ì¼ê¶Œ êµ¬ë§¤
 class BuyFrame extends JFrame{
 	
-	//ÁÂ¼®¼±ÅÃ
+	//ì¢Œì„ì„ íƒ
 	
 }
 
-//½Ã°£/Á¤±â±Ç ±¸¸Å
+//ì‹œê°„/ì •ê¸°ê¶Œ êµ¬ë§¤
 class BuyFrame2 extends JFrame{
 	
 }
