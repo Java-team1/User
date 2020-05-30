@@ -2,6 +2,12 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.*;
+import javax.swing.text.html.*;
+import java.util.Date;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.text.DateFormat;
+import java.text.ParseException;
 
 public class User {
 	userdata[] Data = new userdata[200];
@@ -11,6 +17,7 @@ public class User {
 	
 	public static void main(String[] args) {
 		new FirstFrame();
+		new InsertNumber();
 	}
 	
 }
@@ -18,6 +25,8 @@ public class User {
 class userdata{
 	String name;
 	String number;
+	String starttime;
+	String finishtime;
 }
 
 //Ã¹¹øÂ° È­¸é
@@ -25,47 +34,68 @@ class userdata{
 class FirstFrame extends JFrame{
 	
 	
+	String b2 = "<html>" + "Á¤±â/½Ã°£±Ç" + "<br>" + "±¸¸Å" + "</html>";
+	String b5 = "<html>" + "±â°£ÀÚÀ¯¼®" + "<br>" + "ÀÚ¸®¼±ÅÃ" + "</html>";
+	
+	String pattern = "MM¿ù ddÀÏ HH:mm:ss";
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+	
+	
+	String date = simpleDateFormat.format(new Date());
 	
 	JLabel posseat = new JLabel();
-	JLabel time = new JLabel();
+	JLabel time = new JLabel(date);
 	JButton Button1 = new JButton("´çÀÏ±Ç ±¸¸Å");
-	JButton Button2 = new JButton("Á¤±â/½Ã°£±Ç ±¸¸Å");
+	JButton Button2 = new JButton(b2);
 	JButton Button3 = new JButton("ÀÔ½Ç");
 	JButton Button4 = new JButton("Åð½Ç");
-	JButton Button5 = new JButton("±â°£ÀÚÀ¯¼®\n ÀÚ¸®¼±ÅÃ");
+	JButton Button5 = new JButton(b5);
 	JButton Button6 = new JButton("»ç¹°ÇÔ ´ë¿©");
 	//JButton Button7 = new JButton("½ºÅÍµð·ë ¿¹¾à");
 	//JButton Button8 = new JButton("ÁÂ¼®ÀÌµ¿");
 	
+	
 	public FirstFrame() {
-		
+		getContentPane().setBackground(Color.DARK_GRAY); //¹è°æ»ö ¹Ù²Ù±â
 		setVisible(true);
 		setSize(900,1000);
 		setLayout(null);
 		
+		time.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		time.setBounds(260, 10, 400, 100);
+		time.setForeground(Color.white); //±Û¾¾ »ö ÇöÀç´Â Èò»ö, ¿øÇÏ´Â´ë·Î ¹Ù²Ù±â
+		
+		add(time);
+		
 		Button1.setBackground(Color.orange);
 		Button1.setBounds(60,400,150,150);
+		Button1.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 20));
 		add(Button1);
 		Button1.addActionListener(new EventHandler());
 		
 		Button2.setBackground(Color.orange);
 		Button2.setBounds(260,400,150,150);
+		Button2.setFont(new Font("¸¼Àº°íµñ",Font.BOLD,20));
 		add(Button2);
 		
 		Button5.setBackground(Color.orange);
 		Button5.setBounds(460,400,150,150);
+		Button5.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 20));
 		add(Button5);
 		
 		Button6.setBackground(Color.orange);
 		Button6.setBounds(660,400,150,150);
+		Button6.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 20));
 		add(Button6);
 		
 		Button3.setBackground(Color.orange);
 		Button3.setBounds(460,600,150,150);
+		Button3.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 20));
 		add(Button3);
 		
 		Button4.setBackground(Color.orange);
 		Button4.setBounds(660,600,150,150);
+		Button4.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 20));
 		add(Button4);
 		
 	}
@@ -108,3 +138,217 @@ class BuyFrame extends JFrame{
 class BuyFrame2 extends JFrame{
 	
 }
+
+//ÀüÈ­¹øÈ£ ÀÔ·Â
+class InsertNumber extends JFrame implements ActionListener{
+	
+	
+	JLabel info = new JLabel("ÇÚµåÆù µÚ 8ÀÚ¸®¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+	JTextField number = new JTextField();
+	JButton Button0 = new JButton("0");
+	JButton Button1 = new JButton("1");
+	JButton Button2 = new JButton("2");
+	JButton Button3 = new JButton("3");
+	JButton Button4 = new JButton("4");
+	JButton Button5 = new JButton("5");
+	JButton Button6 = new JButton("6");
+	JButton Button7 = new JButton("7");
+	JButton Button8 = new JButton("8");
+	JButton Button9 = new JButton("9");
+	JButton Pay = new JButton("°áÁ¦");
+	
+	
+	JButton Del = new JButton("<-");
+	
+	public InsertNumber() {
+		
+		//getContentPane().setBackground(Color.DARK_GRAY); //»ö±ò Á¤ÇÏ±â
+		setLayout(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+		setVisible(true);
+		setSize(600,650);
+		
+		info.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 20));
+		info.setHorizontalAlignment(JLabel.CENTER);
+		Button0.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button1.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button2.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button3.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button4.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button5.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button6.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button7.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button8.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Button9.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Pay.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		Del.setFont(new Font("¸¼Àº°íµñ",Font.BOLD, 30));
+		
+		
+		
+		gbc.fill = GridBagConstraints.BOTH;
+		gbc.weightx = 1.0;
+		gbc.weighty = 1.0;
+		
+		gbc.gridx = 1;
+		gbc.gridy = 0;
+		gbc.gridwidth = 5;
+		gbc.gridheight = 2;
+		add(info, gbc);
+		
+		gbc.gridx = 1;
+		gbc.gridy = 3;
+		gbc.gridwidth = 3;
+		gbc.gridheight = 2;
+		add(number, gbc);
+		
+		gbc.gridx = 1;
+		gbc.gridy = 5;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button1, gbc);
+		
+		gbc.gridx = 2;
+		gbc.gridy = 5;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button2, gbc);
+		
+		gbc.gridx = 3;
+		gbc.gridy = 5;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button3, gbc);
+		
+		gbc.gridx = 1;
+		gbc.gridy = 6;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button4, gbc);
+		
+		gbc.gridx = 2;
+		gbc.gridy = 6;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button5, gbc);
+		
+		gbc.gridx = 3;
+		gbc.gridy = 6;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button6, gbc);
+		
+		gbc.gridx = 1;
+		gbc.gridy = 7;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button7, gbc);
+		
+		gbc.gridx = 2;
+		gbc.gridy = 7;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button8, gbc);
+		
+		gbc.gridx = 3;
+		gbc.gridy = 7;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button9, gbc);
+		
+		gbc.gridx = 1;
+		gbc.gridy = 8;
+		gbc.gridwidth = 1;
+		gbc.gridheight = 1;
+		add(Button0, gbc);
+		
+		gbc.gridx = 2;
+		gbc.gridy = 8;
+		gbc.gridwidth = 2;
+		gbc.gridheight = 1;
+		add(Del, gbc);
+		
+		gbc.gridx = 3;
+		gbc.gridy = 10;
+		gbc.gridwidth = 2;
+		gbc.gridheight = 1;
+		add(Pay, gbc);
+		
+		
+		Button0.addActionListener(this);
+		Button1.addActionListener(this);
+		Button2.addActionListener(this);
+		Button3.addActionListener(this);
+		Button4.addActionListener(this);
+		Button5.addActionListener(this);
+		Button6.addActionListener(this);
+		Button7.addActionListener(this);
+		Button8.addActionListener(this);
+		Button9.addActionListener(this);
+		Del.addActionListener(this);
+		Pay.addActionListener(this);
+		
+	}
+	
+	
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		String temp = number.getText();
+		if(input.equals("0")) {
+			temp += "0";
+			number.setText(temp);
+		}
+		else if(input.equals("1")) {
+			temp += "1";
+			number.setText(temp);
+		}
+		else if(input.equals("2")) {
+			temp += "2";
+			number.setText(temp);
+		}
+		else if(input.equals("3")) {
+			temp += "3";
+			number.setText(temp);
+		}
+		else if(input.equals("4")) {
+			temp += "4";
+			number.setText(temp);
+		}
+		else if(input.equals("5")) {
+			temp += "5";
+			number.setText(temp);
+		}
+		else if(input.equals("6")) {
+			temp += "6";
+			number.setText(temp);
+		}
+		else if(input.equals("7")) {
+			temp += "7";
+			number.setText(temp);
+		}
+		else if(input.equals("8")) {
+			temp += "8";
+			number.setText(temp);
+		}
+		else if(input.equals("9")) {
+			temp += "9";
+			number.setText(temp);
+		}
+		else if(input.equals("<-")) {
+			temp = temp.substring(0,temp.length()-1);
+			number.setText(temp);
+		}
+		else if(input.equals("°áÁ¦")){
+			//È¨ È­¸éÀ¸·Î ³Ñ¾î°¡±â
+		}
+		
+		
+		
+		
+	}
+	
+	
+}
+
+
+
