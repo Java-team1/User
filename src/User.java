@@ -362,7 +362,7 @@ class LockerFrame extends JFrame{
 			
 		}
 	};
-	JLabel total = new JLabel("/50");
+	JLabel total = new JLabel("/35");
 	
 	JButton Locker1 = new JButton("1");
 	JButton Locker2 = new JButton("2");
