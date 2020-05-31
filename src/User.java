@@ -60,46 +60,45 @@ class FirstFrame extends JFrame{
 	public FirstFrame() {
 		getContentPane().setBackground(Color.DARK_GRAY); //배경색 바꾸기
 		setVisible(true);
-		setSize(900,1000);
+		setSize(600,650);
 		setLayout(null);
 		
 		time.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		time.setBounds(260, 10, 400, 100);
+		time.setBounds(160, 10, 400, 100);
 		time.setForeground(Color.white); //글씨 색 현재는 흰색, 원하는대로 바꾸기
 		
 		add(time);
 		
 		Button1.setBackground(Color.orange);
-		Button1.setBounds(60,400,150,150);
-		Button1.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		Button1.setBounds(40,300,100,100);
+		Button1.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button1);
 		Button1.addActionListener(new EventHandler());
 		
 		Button2.setBackground(Color.orange);
-		Button2.setBounds(260,400,150,150);
-		Button2.setFont(new Font("맑은고딕",Font.BOLD,20));
+		Button2.setBounds(180,300,100,100);
+		Button2.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button2);
 		
 		Button5.setBackground(Color.orange);
-		Button5.setBounds(460,400,150,150);
-		Button5.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		Button5.setBounds(320,300,100,100);
+		Button5.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button5);
 		
 		Button6.setBackground(Color.orange);
-		Button6.setBounds(660,400,150,150);
-		Button6.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		Button6.setBounds(460,300,100,100);
+		Button6.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button6);
 		
 		Button3.setBackground(Color.orange);
-		Button3.setBounds(460,600,150,150);
-		Button3.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		Button3.setBounds(320,450,100,100);
+		Button3.setFont(new Font("맑은고딕",Font.BOLD, 15));
 		add(Button3);
 		
 		Button4.setBackground(Color.orange);
-		Button4.setBounds(660,600,150,150);
-		Button4.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		Button4.setBounds(460,450,100,100);
+		Button4.setFont(new Font("맑은고딕",Font.BOLD, 15));
 		add(Button4);
-		
 	}
 	
 	
@@ -111,21 +110,243 @@ class FirstFrame extends JFrame{
 
 class EventHandler implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
-		new SecondFrame();
+		new SeatFrame();
 	}
 }
 
 //좌석 선택 + 홈버튼 기능 추가
-class SecondFrame extends JFrame{
+class SeatFrame extends JFrame{
+	JButton home = new JButton("홈으로");
 	JButton seat1 = new JButton("1");
+	JButton seat2 = new JButton("2");
+	JButton seat3 = new JButton("3");
+	JButton seat4 = new JButton("4");
+	JButton seat5 = new JButton("5");
+	JButton seat6 = new JButton("6");
+	JButton seat7 = new JButton("7");
+	JButton seat8 = new JButton("8");
+	JButton seat9 = new JButton("9");
+	JButton seat10 = new JButton("10");
+	JButton seat11 = new JButton("11");
+	JButton seat12 = new JButton("12");
+	JButton seat13 = new JButton("13");
+	JButton seat14 = new JButton("14");
+	JButton seat15 = new JButton("15");
+	JButton seat16 = new JButton("16");
+	JButton seat17 = new JButton("17");
+	JButton seat18 = new JButton("18");
+	JButton seat19 = new JButton("19");
+	JButton seat20 = new JButton("20");
+	JButton seat21 = new JButton("21");
+	JButton seat22 = new JButton("22");
+	JButton seat23 = new JButton("23");
+	JButton seat24 = new JButton("24");
+	JButton seat25 = new JButton("25");
+	JButton seat26 = new JButton("26");
+	JButton seat27 = new JButton("27");
+	JButton seat28 = new JButton("28");
+	JButton seat29 = new JButton("29");
+	JButton seat30 = new JButton("30");
+	JButton seat31 = new JButton("31");
+	JButton seat32 = new JButton("32");
+	JButton seat33 = new JButton("33");
+	JButton seat34 = new JButton("34");
+	JButton seat35 = new JButton("35");
+	JButton seat36 = new JButton("36");
+	JButton seat37 = new JButton("37");
+	JButton seat38 = new JButton("38");
+	JButton seat39 = new JButton("39");
+	JButton seat40 = new JButton("40");
+	JButton seat41 = new JButton("41");
+	JButton seat42 = new JButton("42");
+	JButton seat43 = new JButton("43");
+	JButton seat44 = new JButton("44");
+	JButton seat45 = new JButton("45");
+	JButton seat46 = new JButton("46");
+	JButton seat47 = new JButton("47");
+	JButton seat48 = new JButton("48");
+	JButton seat49 = new JButton("49");
+	JButton seat50 = new JButton("50");
 	
-	public SecondFrame() {
+	public SeatFrame() {
+		getContentPane().setBackground(Color.DARK_GRAY);
 		setVisible(true);
-		setSize(900,1000);
+		setSize(600,650);
 		setLayout(null);
+		//
+		home.setBackground(Color.GREEN);
+		home.setBounds(10,10,70,30);
+		add(home);
+		//
+		JLabel s1 = new JLabel("좌석예약");
+		JLabel s2 = new JLabel("이용현황:");
+		s1.setBounds(200,50,250,50);
+		s2.setBounds(450,100,50,50);
+		s1.setFont(new Font("맑은고딕",Font.BOLD, 50));
+		s1.setForeground(Color.white);
+		s2.setFont(new Font("맑은고딕",Font.BOLD, 10));
+		s2.setForeground(Color.white);
+		add(s1);
+		add(s2);
+		//
 		seat1.setBackground(Color.orange);
-		seat1.setBounds(50,50,50,50);
+		seat1.setBounds(50,150,50,50);
 		add(seat1);
+		seat2.setBackground(Color.orange);
+		seat2.setBounds(100,150,50,50);
+		add(seat2);
+		seat3.setBackground(Color.orange);
+		seat3.setBounds(150,150,50,50);
+		add(seat3);
+		seat4.setBackground(Color.orange);
+		seat4.setBounds(200,150,50,50);
+		add(seat4);
+		seat5.setBackground(Color.orange);
+		seat5.setBounds(250,150,50,50);
+		add(seat5);
+		seat6.setBackground(Color.orange);
+		seat6.setBounds(300,150,50,50);
+		add(seat6);
+		seat7.setBackground(Color.orange);
+		seat7.setBounds(350,150,50,50);
+		add(seat7);
+		seat8.setBackground(Color.orange);
+		seat8.setBounds(400,150,50,50);
+		add(seat8);
+		seat9.setBackground(Color.orange);
+		seat9.setBounds(450,150,50,50);
+		add(seat9);
+		seat10.setBackground(Color.orange);
+		seat10.setBounds(500,150,50,50);
+		add(seat10);
+		//
+		seat11.setBackground(Color.orange);
+		seat11.setBounds(0,250,50,50);
+		add(seat11);
+		seat12.setBackground(Color.orange);
+		seat12.setBounds(0,300,50,50);
+		add(seat12);
+		seat13.setBackground(Color.orange);
+		seat13.setBounds(0,350,50,50);
+		add(seat13);
+		seat14.setBackground(Color.orange);
+		seat14.setBounds(0,400,50,50);
+		add(seat14);
+		seat15.setBackground(Color.orange);
+		seat15.setBounds(0,450,50,50);
+		add(seat15);
+		//
+		seat16.setBackground(Color.orange);
+		seat16.setBounds(100,250,50,50);
+		add(seat16);
+		seat17.setBackground(Color.orange);
+		seat17.setBounds(100,300,50,50);
+		add(seat17);
+		seat18.setBackground(Color.orange);
+		seat18.setBounds(100,350,50,50);
+		add(seat18);
+		seat19.setBackground(Color.orange);
+		seat19.setBounds(100,400,50,50);
+		add(seat19);
+		seat20.setBackground(Color.orange);
+		seat20.setBounds(100,450,50,50);
+		add(seat20);
+		//
+		seat21.setBackground(Color.orange);
+		seat21.setBounds(150,250,50,50);
+		add(seat21);
+		seat22.setBackground(Color.orange);
+		seat22.setBounds(150,300,50,50);
+		add(seat22);
+		seat23.setBackground(Color.orange);
+		seat23.setBounds(150,350,50,50);
+		add(seat23);
+		seat24.setBackground(Color.orange);
+		seat24.setBounds(150,400,50,50);
+		add(seat24);
+		seat25.setBackground(Color.orange);
+		seat25.setBounds(150,450,50,50);
+		add(seat25);
+		//
+		seat26.setBackground(Color.orange);
+		seat26.setBounds(250,250,50,50);
+		add(seat26);
+		seat27.setBackground(Color.orange);
+		seat27.setBounds(250,300,50,50);
+		add(seat27);
+		seat28.setBackground(Color.orange);
+		seat28.setBounds(250,350,50,50);
+		add(seat28);
+		seat29.setBackground(Color.orange);
+		seat29.setBounds(250,400,50,50);
+		add(seat29);
+		seat30.setBackground(Color.orange);
+		seat30.setBounds(250,450,50,50);
+		add(seat30);
+		//
+		seat31.setBackground(Color.orange);
+		seat31.setBounds(300,250,50,50);
+		add(seat31);
+		seat32.setBackground(Color.orange);
+		seat32.setBounds(300,300,50,50);
+		add(seat32);
+		seat33.setBackground(Color.orange);
+		seat33.setBounds(300,350,50,50);
+		add(seat33);
+		seat34.setBackground(Color.orange);
+		seat34.setBounds(300,400,50,50);
+		add(seat34);
+		seat35.setBackground(Color.orange);
+		seat35.setBounds(300,450,50,50);
+		add(seat35);
+		//
+		seat36.setBackground(Color.orange);
+		seat36.setBounds(400,250,50,50);
+		add(seat36);
+		seat37.setBackground(Color.orange);
+		seat37.setBounds(400,300,50,50);
+		add(seat37);
+		seat38.setBackground(Color.orange);
+		seat38.setBounds(400,350,50,50);
+		add(seat38);
+		seat39.setBackground(Color.orange);
+		seat39.setBounds(400,400,50,50);
+		add(seat39);
+		seat40.setBackground(Color.orange);
+		seat40.setBounds(400,450,50,50);
+		add(seat40);
+		//
+		seat41.setBackground(Color.orange);
+		seat41.setBounds(450,250,50,50);
+		add(seat41);
+		seat42.setBackground(Color.orange);
+		seat42.setBounds(450,300,50,50);
+		add(seat42);
+		seat43.setBackground(Color.orange);
+		seat43.setBounds(450,350,50,50);
+		add(seat43);
+		seat44.setBackground(Color.orange);
+		seat44.setBounds(450,400,50,50);
+		add(seat44);
+		seat45.setBackground(Color.orange);
+		seat45.setBounds(450,450,50,50);
+		add(seat45);
+		//
+		seat46.setBackground(Color.orange);
+		seat46.setBounds(550,250,50,50);
+		add(seat46);
+		seat47.setBackground(Color.orange);
+		seat47.setBounds(550,300,50,50);
+		add(seat47);
+		seat48.setBackground(Color.orange);
+		seat48.setBounds(550,350,50,50);
+		add(seat48);
+		seat49.setBackground(Color.orange);
+		seat49.setBounds(550,400,50,50);
+		add(seat49);
+		seat50.setBackground(Color.orange);
+		seat50.setBounds(550,450,50,50);
+		add(seat50);
 	}
 }
 
@@ -606,4 +827,3 @@ class LockerFrame extends JFrame{
 		
 	}
 }
-
