@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.event.*;
 import javax.swing.text.html.*;
+import javax.swing.border.*;
 import java.util.Date;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
@@ -18,6 +19,7 @@ public class User {
 	public static void main(String[] args) {
 		new FirstFrame();
 		new InsertNumber();
+		new LockerFrame();
 	}
 	
 }
@@ -350,5 +352,258 @@ class InsertNumber extends JFrame implements ActionListener{
 	
 }
 
+//사물함 선택+홈버튼 기능
+class LockerFrame extends JFrame{
+	
+	JButton homeButton = new JButton("홈으로");
+	JLabel info = new JLabel("사물함 예약");
+	JTextField used = new JTextField() {  
+		public void setBorder(Border boder) {   //현재는 textfield 테두리 투명하게
+			
+		}
+	};
+	JLabel total = new JLabel("/50");
+	
+	JButton Locker1 = new JButton("1");
+	JButton Locker2 = new JButton("2");
+	JButton Locker3 = new JButton("3");
+	JButton Locker4 = new JButton("4");
+	JButton Locker5 = new JButton("5");
+	JButton Locker6 = new JButton("6");
+	JButton Locker7 = new JButton("7");
+	JButton Locker8 = new JButton("8");
+	JButton Locker9 = new JButton("9");
+	JButton Locker10 = new JButton("10");
+	JButton Locker11 = new JButton("11");
+	JButton Locker12 = new JButton("12");
+	JButton Locker13 = new JButton("13");
+	JButton Locker14 = new JButton("14");
+	JButton Locker15 = new JButton("15");
+	JButton Locker16 = new JButton("16");
+	JButton Locker17 = new JButton("17");
+	JButton Locker18 = new JButton("18");
+	JButton Locker19 = new JButton("19");
+	JButton Locker20 = new JButton("20");
+	JButton Locker21 = new JButton("21");
+	JButton Locker22 = new JButton("22");
+	JButton Locker23 = new JButton("23");
+	JButton Locker24 = new JButton("24");
+	JButton Locker25 = new JButton("25");
+	JButton Locker26 = new JButton("26");
+	JButton Locker27 = new JButton("27");
+	JButton Locker28 = new JButton("28");
+	JButton Locker29 = new JButton("29");
+	JButton Locker30 = new JButton("30");
+	JButton Locker31 = new JButton("31");
+	JButton Locker32 = new JButton("32");
+	JButton Locker33 = new JButton("33");
+	JButton Locker34 = new JButton("34");
+	JButton Locker35 = new JButton("35");
+	
+	public LockerFrame() {
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		
+		homeButton.setBackground(Color.orange); //홈버튼 색깔 현재는 오렌지
+		homeButton.setBounds(55,50,70,40);
+		homeButton.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(homeButton);
+		
+		
+		info.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		info.setBounds(220,40, 200,50);
+		info.setForeground(Color.white); 
+		add(info);
+		
+		total.setFont(new Font("맑은고딕",Font.BOLD, 25));
+		total.setBounds(495,135,50,50);
+		total.setForeground(Color.white); 
+		add(total);
+		
+		used.setBackground(Color.orange); 
+		used.setBounds(445,135,50,50);
+		used.setFont(new Font("맑은고딕",Font.BOLD, 13));
+		used.setOpaque(false); 
+		add(used);
+		
+		Locker1.setBackground(Color.orange);
+		Locker1.setBounds(55,220,70,70);
+		Locker1.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker1);
+		
+		Locker2.setBackground(Color.orange);
+		Locker2.setBounds(125,220,70,70);
+		Locker2.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker2);
+	
+		Locker3.setBackground(Color.orange);
+		Locker3.setBounds(195,220,70,70);
+		Locker3.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker3);
+	
+		Locker4.setBackground(Color.orange);
+		Locker4.setBounds(265,220,70,70);
+		Locker4.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker4);
+	
+		Locker5.setBackground(Color.orange);
+		Locker5.setBounds(335,220,70,70);
+		Locker5.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker5);
+	
+		Locker6.setBackground(Color.orange);
+		Locker6.setBounds(405,220,70,70);
+		Locker6.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker6);
+	
+		Locker7.setBackground(Color.orange);
+		Locker7.setBounds(475,220,70,70);
+		Locker7.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker7);
+	
+		Locker8.setBackground(Color.orange);
+		Locker8.setBounds(55,290,70,70);
+		Locker8.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker8);
+	
+		Locker9.setBackground(Color.orange);
+		Locker9.setBounds(125,290,70,70);
+		Locker9.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker9);
+		
+		Locker10.setBackground(Color.orange);
+		Locker10.setBounds(195,290,70,70);
+		Locker10.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker10);
 
+		Locker11.setBackground(Color.orange);
+		Locker11.setBounds(265,290,70,70);
+		Locker11.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker11);
+	
+		Locker12.setBackground(Color.orange);
+		Locker12.setBounds(335,290,70,70);
+		Locker12.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker12);
+	
+		Locker13.setBackground(Color.orange);
+		Locker13.setBounds(405,290,70,70);
+		Locker13.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker13);
+	
+		Locker14.setBackground(Color.orange);
+		Locker14.setBounds(475,290,70,70);
+		Locker14.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker14);
+	
+		Locker15.setBackground(Color.orange);
+		Locker15.setBounds(55,360,70,70);
+		Locker15.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker15);
+	
+		Locker16.setBackground(Color.orange);
+		Locker16.setBounds(125,360,70,70);
+		Locker16.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker16);
+	
+		Locker17.setBackground(Color.orange);
+		Locker17.setBounds(195,360,70,70);
+		Locker17.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker17);
+	
+		Locker18.setBackground(Color.orange);
+		Locker18.setBounds(265,360,70,70);
+		Locker18.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker18);
+	
+		Locker19.setBackground(Color.orange);
+		Locker19.setBounds(335,360,70,70);
+		Locker19.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker19);
+	
+		Locker20.setBackground(Color.orange);
+		Locker20.setBounds(405,360,70,70);
+		Locker20.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker20);
+	
+		Locker21.setBackground(Color.orange);
+		Locker21.setBounds(475,360,70,70);
+		Locker21.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker21);
+		
+		Locker22.setBackground(Color.orange);
+		Locker22.setBounds(55,430,70,70);
+		Locker22.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker22);
+
+		Locker23.setBackground(Color.orange);
+		Locker23.setBounds(125,430,70,70);
+		Locker23.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker23);
+
+		Locker24.setBackground(Color.orange);
+		Locker24.setBounds(195,430,70,70);
+		Locker24.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker24);
+		
+		Locker25.setBackground(Color.orange);
+		Locker25.setBounds(265,430,70,70);
+		Locker25.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker25);
+		
+		Locker26.setBackground(Color.orange);
+		Locker26.setBounds(335,430,70,70);
+		Locker26.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker26);
+		
+		Locker27.setBackground(Color.orange);
+		Locker27.setBounds(405,430,70,70);
+		Locker27.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker27);
+		
+		Locker28.setBackground(Color.orange);
+		Locker28.setBounds(475,430,70,70);
+		Locker28.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker28);
+		
+		Locker29.setBackground(Color.orange);
+		Locker29.setBounds(55,500,70,70);
+		Locker29.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker29);
+		
+		Locker30.setBackground(Color.orange);
+		Locker30.setBounds(125,500,70,70);
+		Locker30.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker30);
+		
+		Locker31.setBackground(Color.orange);
+		Locker31.setBounds(195,500,70,70);
+		Locker31.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker31);
+		
+		Locker32.setBackground(Color.orange);
+		Locker32.setBounds(265,500,70,70);
+		Locker32.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker32);
+		
+		Locker33.setBackground(Color.orange);
+		Locker33.setBounds(335,500,70,70);
+		Locker33.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker33);
+		
+		Locker34.setBackground(Color.orange);
+		Locker34.setBounds(405,500,70,70);
+		Locker34.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker34);
+		
+		Locker35.setBackground(Color.orange);
+		Locker35.setBounds(475,500,70,70);
+		Locker35.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		add(Locker35);
+		
+		
+	}
+}
 
