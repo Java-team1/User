@@ -47,6 +47,18 @@ class FirstFrame extends JFrame{
 	
 	JLabel posseat = new JLabel();
 	JLabel time = new JLabel(date);
+	//
+	JLabel com1 = new JLabel("이용 안내");
+	JLabel com2 = new JLabel("1. 이용권 선택");
+	JLabel com3 = new JLabel("2. 원하는 좌석 선택");
+	JLabel com4 = new JLabel("3. 원하는 메뉴 선택");
+	JLabel com5 = new JLabel("4. 결재(현금/카드)");
+	JLabel com6 = new JLabel("5. 입실 버튼 누른 후");
+	JLabel com7 = new JLabel("바코드 및 휴대폰 번호로 입장 가능");
+	JLabel com8 = new JLabel("문의사항 : 010-1234-5678");
+	JLabel com9 = new JLabel("*스터디룸 1회 이용시 시간권 구매 이용");
+	JLabel com10 = new JLabel("장기이용시 문의바람");
+	//
 	JButton Button1 = new JButton("당일권 구매");
 	JButton Button2 = new JButton(b2);
 	JButton Button3 = new JButton("입실");
@@ -69,36 +81,41 @@ class FirstFrame extends JFrame{
 		
 		add(time);
 		
-		Button1.setBackground(Color.orange);
+		Button1.setBackground(Color.PINK);
 		Button1.setBounds(40,300,100,100);
 		Button1.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button1);
 		Button1.addActionListener(new EventHandler());
 		
-		Button2.setBackground(Color.orange);
+		Button2.setBackground(Color.PINK);
 		Button2.setBounds(180,300,100,100);
 		Button2.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button2);
 		
-		Button5.setBackground(Color.orange);
+		Button5.setBackground(Color.PINK);
 		Button5.setBounds(320,300,100,100);
 		Button5.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button5);
 		
-		Button6.setBackground(Color.orange);
+		Button6.setBackground(Color.PINK);
 		Button6.setBounds(460,300,100,100);
 		Button6.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button6);
 		
-		Button3.setBackground(Color.orange);
+		Button3.setBackground(Color.PINK);
 		Button3.setBounds(320,450,100,100);
 		Button3.setFont(new Font("맑은고딕",Font.BOLD, 15));
 		add(Button3);
 		
-		Button4.setBackground(Color.orange);
+		Button4.setBackground(Color.PINK);
 		Button4.setBounds(460,450,100,100);
 		Button4.setFont(new Font("맑은고딕",Font.BOLD, 15));
 		add(Button4);
+		
+		com1.setBounds(40,450,100,100);
+		com1.setFont(new Font("맑은고딕",Font.BOLD, 15));
+		com1.setForeground(Color.white);
+		add(com1);
 	}
 	
 	
