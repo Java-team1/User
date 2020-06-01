@@ -20,6 +20,7 @@ public class User {
 		new FirstFrame();
 		new InsertNumber();
 		new LockerFrame();
+		new BuyFrame2();
 	}
 	
 }
@@ -375,7 +376,242 @@ class BuyFrame extends JFrame{
 }
 
 //시간/정기권 구매
-class BuyFrame2 extends JFrame{
+class BuyFrame2 extends JFrame implements ActionListener{
+	
+
+	String b1 = "<html>" + "2주" + "<br>" + "70,000원" + "</html>";
+	String b2 = "<html>" + "4주" + "<br>" + "110,000원" + "</html>";
+	String b3 = "<html>" + "15시간" + "<br>" + "20,000원" + "</html>";
+	String b4 = "<html>" + "30시간" + "<br>" + "38,000원" + "</html>";
+	String b5 = "<html>" + "50시간" + "<br>" + "60,000원" + "</html>";
+	String b6 = "<html>" + "100시간" + "<br>" + "110,000원" + "</html>";
+	String b7 = "<html>" + "200시간" + "<br>" + "180,000원" + "</html>";
+	
+	JButton homeButton = new JButton("홈으로");
+	JLabel info = new JLabel("정기권 구입");
+	JLabel step1 = new JLabel("1단계 : 원하는 메뉴를 선택하세요");
+	JLabel step2 = new JLabel("2단계 : 핸드폰 번호를 입력하세요");
+	JButton Button1 = new JButton(b1);
+	JButton Button2 = new JButton(b2);
+	JButton Button3 = new JButton(b3);
+	JButton Button4 = new JButton(b4);
+	JButton Button5 = new JButton(b5);
+	JButton Button6 = new JButton(b6);
+	JButton Button7 = new JButton(b7);
+	//JButton cashButton = new JButton("현금결제");
+	//JButton cardButton = new JButton("카드결제");
+	
+	JTextField number = new JTextField() {  
+		public void setBorder(Border boder) {   //현재는 textfield 테두리 투명하게
+			
+		}
+	};
+	JButton num0 = new JButton("0");
+	JButton num1 = new JButton("1");
+	JButton num2 = new JButton("2");
+	JButton num3 = new JButton("3");
+	JButton num4 = new JButton("4");
+	JButton num5 = new JButton("5");
+	JButton num6 = new JButton("6");
+	JButton num7 = new JButton("7");
+	JButton num8 = new JButton("8");
+	JButton num9 = new JButton("9");
+	JButton Pay = new JButton("결제");
+	
+	
+	JButton Del = new JButton("<-");
+		
+		
+	
+	public BuyFrame2() {
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		
+		info.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		info.setBounds(220,20, 200,30);
+		info.setForeground(Color.white); 
+		add(info);
+		step1.setFont(new Font("맑은고딕",Font.BOLD, 15));
+		step1.setBounds(150,70, 300,20);
+		step1.setForeground(Color.white); 
+		add(step1);
+			
+		Button1.setBackground(Color.orange); //버튼 색깔 현재는 오렌지
+		Button1.setBounds(60,110,120,70);
+		Button1.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button1);
+		
+		Button2.setBackground(Color.orange); 
+		Button2.setBounds(180,110,120,70);
+		Button2.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button2);
+		
+		Button3.setBackground(Color.orange); 
+		Button3.setBounds(300,110,120,70);
+		Button3.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button3);
+		
+		Button4.setBackground(Color.orange); 
+		Button4.setBounds(420,110,120,70);
+		Button4.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button4);
+		
+		Button5.setBackground(Color.orange); 
+		Button5.setBounds(60,180,120,70);
+		Button5.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button5);
+		
+		Button6.setBackground(Color.orange); 
+		Button6.setBounds(180,180,120,70);
+		Button6.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button6);
+		
+		Button7.setBackground(Color.orange); 
+		Button7.setBounds(300,180,120,70);
+		Button7.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button7);
+		
+		step2.setFont(new Font("맑은고딕",Font.BOLD, 15));
+		step2.setBounds(150,280, 300,20);
+		step2.setForeground(Color.white); 
+		add(step2);
+		
+		number.setBackground(Color.white);      //현재는 번호 입력칸 배경 흰색
+		number.setBounds(60,420,200,60);
+		number.setFont(new Font("맑은고딕",Font.BOLD, 13));
+		add(number);
+		
+		num0.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num3.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num4.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num5.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num6.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num7.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num8.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num9.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Pay.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Del.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		
+		num1.setBackground(Color.orange);
+		num1.setBounds(360,360,60,60);
+		num1.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num1);
+		num2.setBackground(Color.orange);
+		num2.setBounds(420,360,60,60);
+		num2.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num2);
+		num3.setBackground(Color.orange);
+		num3.setBounds(480,360,60,60);
+		num3.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num3);
+		num4.setBackground(Color.orange);
+		num4.setBounds(360,420,60,60);
+		num4.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num4);
+		num5.setBackground(Color.orange);
+		num5.setBounds(420,420,60,60);
+		num5.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num5);
+		num6.setBackground(Color.orange);
+		num6.setBounds(480,420,60,60);
+		num6.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num6);
+		num7.setBackground(Color.orange);
+		num7.setBounds(360,480,60,60);
+		num7.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num7);
+		num8.setBackground(Color.orange);
+		num8.setBounds(420,480,60,60);
+		num8.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num8);
+		num9.setBackground(Color.orange);
+		num9.setBounds(480,480,60,60);
+		num9.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num9);
+		num0.setBackground(Color.orange);
+		num0.setBounds(360,540,60,60);
+		num0.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num0);
+		Del.setBackground(Color.orange);
+		Del.setBounds(420,540,60,60);
+		Del.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Del);
+		Pay.setBackground(Color.orange);
+		Pay.setBounds(480,540,60,60);
+		Pay.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Pay);
+		
+		
+		num0.addActionListener(this);
+		num1.addActionListener(this);
+		num2.addActionListener(this);
+		num3.addActionListener(this);
+		num4.addActionListener(this);
+		num5.addActionListener(this);
+		num6.addActionListener(this);
+		num7.addActionListener(this);
+		num8.addActionListener(this);
+		num9.addActionListener(this);
+		Del.addActionListener(this);
+		Pay.addActionListener(this);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		String temp = number.getText();
+		if(input.equals("0")) {
+			temp += "0";
+			number.setText(temp);
+		}
+		else if(input.equals("1")) {
+			temp += "1";
+			number.setText(temp);
+		}
+		else if(input.equals("2")) {
+			temp += "2";
+			number.setText(temp);
+		}
+		else if(input.equals("3")) {
+			temp += "3";
+			number.setText(temp);
+		}
+		else if(input.equals("4")) {
+			temp += "4";
+			number.setText(temp);
+		}
+		else if(input.equals("5")) {
+			temp += "5";
+			number.setText(temp);
+		}
+		else if(input.equals("6")) {
+			temp += "6";
+			number.setText(temp);
+		}
+		else if(input.equals("7")) {
+			temp += "7";
+			number.setText(temp);
+		}
+		else if(input.equals("8")) {
+			temp += "8";
+			number.setText(temp);
+		}
+		else if(input.equals("9")) {
+			temp += "9";
+			number.setText(temp);
+		}
+		else if(input.equals("<-")) {
+			temp = temp.substring(0,temp.length()-1);
+			number.setText(temp);
+		}
+		else if(input.equals("결제")){
+			//홈 화면으로 넘어가기
+		}
+			
+	}
 	
 }
 
