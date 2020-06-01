@@ -11,32 +11,22 @@ import java.text.DateFormat;
 import java.text.ParseException;
 
 public class User {
+	userdata[] Data = new userdata[200];
 	
+	boolean[] seats = new boolean[50];
 	
-	//boolean[] seats = new boolean[50];
 	
 	public static void main(String[] args) {
 		new FirstFrame();
-		//new InsertNumber(5);
-		//new LockerFrame();
-		//new BuyFrame();
+		new InsertNumber();
+		new LockerFrame();
+		new BuyFrame2();
 	}
 	
 }
 
-class UserData{
-	public static datauser[] Data = new datauser[200];
-	public static int num= 0;;
-}
-
-class seatstatus{
-	public static boolean[] seats = new boolean[50];
-	public static int seatnum = 0;
-	public static datauser[] seatData = new datauser[50];
-}
-
-class datauser{
-	
+class userdata{
+	String name;
 	String number;
 	String starttime;
 	String finishtime;
@@ -96,7 +86,7 @@ class FirstFrame extends JFrame{
 		Button1.setBounds(40,300,100,100);
 		Button1.setFont(new Font("맑은고딕",Font.BOLD, 10));
 		add(Button1);
-		Button1.addActionListener(new EventSeat());
+		Button1.addActionListener(new EventHandler());
 		
 		Button2.setBackground(Color.PINK);
 		Button2.setBounds(180,300,100,100);
@@ -136,15 +126,11 @@ class FirstFrame extends JFrame{
 	
 }
 
-
-class EventSeat implements ActionListener{
+class EventHandler implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
-		new SeatFrame(0);
+		new SeatFrame();
 	}
 }
-
-
-
 
 //좌석 선택 + 홈버튼 기능 추가
 class SeatFrame extends JFrame{
@@ -200,350 +186,432 @@ class SeatFrame extends JFrame{
 	JButton seat49 = new JButton("49");
 	JButton seat50 = new JButton("50");
 	
-	public SeatFrame(int type) {
-		//당일권 구매 -> type: 0
-		//정기권 이용자 자리 선택 -> type: 1
-		
-		int seatnumber;
-		if(type == 0) {
-			
-			getContentPane().setBackground(Color.DARK_GRAY);
-			setVisible(true);
-			setSize(600,650);
-			setLayout(null);
-			//
-			home.setBackground(Color.GREEN);
-			home.setBounds(10,10,70,30);
-			add(home);
-			//
-			JLabel s1 = new JLabel("좌석예약");
-			JLabel s2 = new JLabel("이용현황:");
-			s1.setBounds(200,50,250,50);
-			s2.setBounds(450,100,50,50);
-			s1.setFont(new Font("맑은고딕",Font.BOLD, 50));
-			s1.setForeground(Color.white);
-			s2.setFont(new Font("맑은고딕",Font.BOLD, 10));
-			s2.setForeground(Color.white);
-			add(s1);
-			add(s2);
-			//
-			seat1.setBackground(Color.orange);
-			seat1.setBounds(50,150,50,50);
-			seat1.addActionListener(new EventHandler());
-			add(seat1);
-			seat1.addActionListener(new EventHandler());
-		
-			seat2.setBackground(Color.orange);
-			seat2.setBounds(100,150,50,50);
-			seat2.addActionListener(new EventHandler());
-			add(seat2);
-			
-			seat3.setBackground(Color.orange);
-			seat3.setBounds(150,150,50,50);
-			seat3.addActionListener(new EventHandler());
-			add(seat3);
-			
-			seat4.setBackground(Color.orange);
-			seat4.setBounds(200,150,50,50);
-			seat4.addActionListener(new EventHandler());
-			add(seat4);
-			
-			seat5.setBackground(Color.orange);
-			seat5.setBounds(250,150,50,50);
-			seat5.addActionListener(new EventHandler());
-			add(seat5);
-			
-			seat6.setBackground(Color.orange);
-			seat6.setBounds(300,150,50,50);
-			seat6.addActionListener(new EventHandler());
-			add(seat6);
-			
-			seat7.setBackground(Color.orange);
-			seat7.setBounds(350,150,50,50);
-			seat7.addActionListener(new EventHandler());
-			add(seat7);
-			
-			seat8.setBackground(Color.orange);
-			seat8.setBounds(400,150,50,50);
-			seat8.addActionListener(new EventHandler());
-			add(seat8);
-			
-			seat9.setBackground(Color.orange);
-			seat9.setBounds(450,150,50,50);
-			seat9.addActionListener(new EventHandler());
-			add(seat9);
-			
-			seat10.setBackground(Color.orange);
-			seat10.setBounds(500,150,50,50);
-			seat10.addActionListener(new EventHandler());
-			add(seat10);
-			
-			seat11.setBackground(Color.orange);
-			seat11.setBounds(0,250,50,50);
-			seat11.addActionListener(new EventHandler());
-			add(seat11);
-			
-			seat12.setBackground(Color.orange);
-			seat12.setBounds(0,300,50,50);
-			seat12.addActionListener(new EventHandler());
-			add(seat12);
-			
-			seat13.setBackground(Color.orange);
-			seat13.setBounds(0,350,50,50);
-			seat13.addActionListener(new EventHandler());
-			add(seat13);
-			
-			seat14.setBackground(Color.orange);
-			seat14.setBounds(0,400,50,50);
-			seat14.addActionListener(new EventHandler());
-			add(seat14);
-			
-			seat15.setBackground(Color.orange);
-			seat15.setBounds(0,450,50,50);
-			seat15.addActionListener(new EventHandler());
-			add(seat15);
-			
-			seat16.setBackground(Color.orange);
-			seat16.setBounds(100,250,50,50);
-			seat16.addActionListener(new EventHandler());
-			add(seat16);
-			
-			seat17.setBackground(Color.orange);
-			seat17.setBounds(100, 300, 50, 50);
-			seat17.addActionListener(new EventHandler());
-			add(seat17);
-			
-			seat18.setBackground(Color.orange);
-			seat18.setBounds(100, 350, 50, 50);
-			seat18.addActionListener(new EventHandler());
-			add(seat18);
-			
-			seat19.setBackground(Color.orange);
-			seat19.setBounds(100, 400, 50, 50);
-			seat19.addActionListener(new EventHandler());
-			add(seat19);
-			
-			seat20.setBackground(Color.orange);
-			seat20.setBounds(100, 450, 50, 50);
-			seat20.addActionListener(new EventHandler());
-			add(seat20);
-			
-			seat21.setBackground(Color.orange);
-			seat21.setBounds(150, 250, 50, 50);
-			seat21.addActionListener(new EventHandler());
-			add(seat21);
-			
-			seat22.setBackground(Color.orange);
-			seat22.setBounds(150, 300, 50, 50);
-			seat22.addActionListener(new EventHandler());
-			add(seat22);
-			
-			seat23.setBackground(Color.orange);
-			seat23.setBounds(150, 350, 50, 50);
-			seat23.addActionListener(new EventHandler());
-			add(seat23);
-			
-			seat24.setBackground(Color.orange);
-			seat24.setBounds(150, 400, 50, 50);
-			seat24.addActionListener(new EventHandler());
-			add(seat24);
-			
-			seat25.setBackground(Color.orange);
-			seat25.setBounds(150, 450, 50, 50);
-			seat25.addActionListener(new EventHandler());
-			add(seat25);
-			
-			seat26.setBackground(Color.orange);
-			seat26.setBounds(250, 250, 50, 50);
-			seat26.addActionListener(new EventHandler());
-			add(seat26);
-			
-			seat27.setBackground(Color.orange);
-			seat27.setBounds(250, 300, 50, 50);
-			seat27.addActionListener(new EventHandler());
-			add(seat27);
-			
-			seat28.setBackground(Color.orange);
-			seat28.setBounds(250, 350, 50, 50);
-			seat28.addActionListener(new EventHandler());
-			add(seat28);
-			
-			//여기서부터
-			seat29.setBackground(Color.orange);
-			seat29.setBounds(250, 400, 50, 50);
-			add(seat29);
-			seat30.setBackground(Color.orange);
-			seat30.setBounds(250, 450, 50, 50);
-			add(seat30);
-			//
-			seat31.setBackground(Color.orange);
-			seat31.setBounds(300, 250, 50, 50);
-			add(seat31);
-			seat32.setBackground(Color.orange);
-			seat32.setBounds(300, 300, 50, 50);
-			add(seat32);
-			seat33.setBackground(Color.orange);
-			seat33.setBounds(300, 350, 50, 50);
-			add(seat33);
-			seat34.setBackground(Color.orange);
-			seat34.setBounds(300, 400, 50, 50);
-			add(seat34);
-			seat35.setBackground(Color.orange);
-			seat35.setBounds(300, 450, 50, 50);
-			add(seat35);
-			//
-			seat36.setBackground(Color.orange);
-			seat36.setBounds(400, 250, 50, 50);
-			add(seat36);
-			seat37.setBackground(Color.orange);
-			seat37.setBounds(400, 300, 50, 50);
-			add(seat37);
-			seat38.setBackground(Color.orange);
-			seat38.setBounds(400, 350, 50, 50);
-			add(seat38);
-			seat39.setBackground(Color.orange);
-			seat39.setBounds(400, 400, 50, 50);
-			add(seat39);
-			seat40.setBackground(Color.orange);
-			seat40.setBounds(400, 450, 50, 50);
-			add(seat40);
-			//
-			seat41.setBackground(Color.orange);
-			seat41.setBounds(450, 250, 50, 50);
-			add(seat41);
-			seat42.setBackground(Color.orange);
-			seat42.setBounds(450, 300, 50, 50);
-			add(seat42);
-			seat43.setBackground(Color.orange);
-			seat43.setBounds(450, 350, 50, 50);
-			add(seat43);
-			seat44.setBackground(Color.orange);
-			seat44.setBounds(450, 400, 50, 50);
-			add(seat44);
-			seat45.setBackground(Color.orange);
-			seat45.setBounds(450, 450, 50, 50);
-			add(seat45);
-			//
-			seat46.setBackground(Color.orange);
-			seat46.setBounds(550, 250, 50, 50);
-			add(seat46);
-			seat47.setBackground(Color.orange);
-			seat47.setBounds(550, 300, 50, 50);
-			add(seat47);
-			seat48.setBackground(Color.orange);
-			seat48.setBounds(550, 350, 50, 50);
-			add(seat48);
-			seat49.setBackground(Color.orange);
-			seat49.setBounds(550, 400, 50, 50);
-			add(seat49);
-			seat50.setBackground(Color.orange);
-			seat50.setBounds(550, 450, 50, 50);
-			add(seat50);
-		}
-	}
-	
-	class EventHandler implements ActionListener{
-		public void actionPerformed(ActionEvent e) {
-			new BuyFrame(Integer.valueOf(e.getActionCommand()));
-		}
+	public SeatFrame() {
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		//
+		home.setBackground(Color.GREEN);
+		home.setBounds(10,10,70,30);
+		add(home);
+		//
+		JLabel s1 = new JLabel("좌석예약");
+		JLabel s2 = new JLabel("이용현황:");
+		s1.setBounds(200,50,250,50);
+		s2.setBounds(450,100,50,50);
+		s1.setFont(new Font("맑은고딕",Font.BOLD, 50));
+		s1.setForeground(Color.white);
+		s2.setFont(new Font("맑은고딕",Font.BOLD, 10));
+		s2.setForeground(Color.white);
+		add(s1);
+		add(s2);
+		//
+		seat1.setBackground(Color.orange);
+		seat1.setBounds(50,150,50,50);
+		add(seat1);
+		seat2.setBackground(Color.orange);
+		seat2.setBounds(100,150,50,50);
+		add(seat2);
+		seat3.setBackground(Color.orange);
+		seat3.setBounds(150,150,50,50);
+		add(seat3);
+		seat4.setBackground(Color.orange);
+		seat4.setBounds(200,150,50,50);
+		add(seat4);
+		seat5.setBackground(Color.orange);
+		seat5.setBounds(250,150,50,50);
+		add(seat5);
+		seat6.setBackground(Color.orange);
+		seat6.setBounds(300,150,50,50);
+		add(seat6);
+		seat7.setBackground(Color.orange);
+		seat7.setBounds(350,150,50,50);
+		add(seat7);
+		seat8.setBackground(Color.orange);
+		seat8.setBounds(400,150,50,50);
+		add(seat8);
+		seat9.setBackground(Color.orange);
+		seat9.setBounds(450,150,50,50);
+		add(seat9);
+		seat10.setBackground(Color.orange);
+		seat10.setBounds(500,150,50,50);
+		add(seat10);
+		//
+		seat11.setBackground(Color.orange);
+		seat11.setBounds(0,250,50,50);
+		add(seat11);
+		seat12.setBackground(Color.orange);
+		seat12.setBounds(0,300,50,50);
+		add(seat12);
+		seat13.setBackground(Color.orange);
+		seat13.setBounds(0,350,50,50);
+		add(seat13);
+		seat14.setBackground(Color.orange);
+		seat14.setBounds(0,400,50,50);
+		add(seat14);
+		seat15.setBackground(Color.orange);
+		seat15.setBounds(0,450,50,50);
+		add(seat15);
+		//
+		seat16.setBackground(Color.orange);
+		seat16.setBounds(100,250,50,50);
+		add(seat16);
+		seat17.setBackground(Color.orange);
+		seat17.setBounds(100,300,50,50);
+		add(seat17);
+		seat18.setBackground(Color.orange);
+		seat18.setBounds(100,350,50,50);
+		add(seat18);
+		seat19.setBackground(Color.orange);
+		seat19.setBounds(100,400,50,50);
+		add(seat19);
+		seat20.setBackground(Color.orange);
+		seat20.setBounds(100,450,50,50);
+		add(seat20);
+		//
+		seat21.setBackground(Color.orange);
+		seat21.setBounds(150,250,50,50);
+		add(seat21);
+		seat22.setBackground(Color.orange);
+		seat22.setBounds(150,300,50,50);
+		add(seat22);
+		seat23.setBackground(Color.orange);
+		seat23.setBounds(150,350,50,50);
+		add(seat23);
+		seat24.setBackground(Color.orange);
+		seat24.setBounds(150,400,50,50);
+		add(seat24);
+		seat25.setBackground(Color.orange);
+		seat25.setBounds(150,450,50,50);
+		add(seat25);
+		//
+		seat26.setBackground(Color.orange);
+		seat26.setBounds(250,250,50,50);
+		add(seat26);
+		seat27.setBackground(Color.orange);
+		seat27.setBounds(250,300,50,50);
+		add(seat27);
+		seat28.setBackground(Color.orange);
+		seat28.setBounds(250,350,50,50);
+		add(seat28);
+		seat29.setBackground(Color.orange);
+		seat29.setBounds(250,400,50,50);
+		add(seat29);
+		seat30.setBackground(Color.orange);
+		seat30.setBounds(250,450,50,50);
+		add(seat30);
+		//
+		seat31.setBackground(Color.orange);
+		seat31.setBounds(300,250,50,50);
+		add(seat31);
+		seat32.setBackground(Color.orange);
+		seat32.setBounds(300,300,50,50);
+		add(seat32);
+		seat33.setBackground(Color.orange);
+		seat33.setBounds(300,350,50,50);
+		add(seat33);
+		seat34.setBackground(Color.orange);
+		seat34.setBounds(300,400,50,50);
+		add(seat34);
+		seat35.setBackground(Color.orange);
+		seat35.setBounds(300,450,50,50);
+		add(seat35);
+		//
+		seat36.setBackground(Color.orange);
+		seat36.setBounds(400,250,50,50);
+		add(seat36);
+		seat37.setBackground(Color.orange);
+		seat37.setBounds(400,300,50,50);
+		add(seat37);
+		seat38.setBackground(Color.orange);
+		seat38.setBounds(400,350,50,50);
+		add(seat38);
+		seat39.setBackground(Color.orange);
+		seat39.setBounds(400,400,50,50);
+		add(seat39);
+		seat40.setBackground(Color.orange);
+		seat40.setBounds(400,450,50,50);
+		add(seat40);
+		//
+		seat41.setBackground(Color.orange);
+		seat41.setBounds(450,250,50,50);
+		add(seat41);
+		seat42.setBackground(Color.orange);
+		seat42.setBounds(450,300,50,50);
+		add(seat42);
+		seat43.setBackground(Color.orange);
+		seat43.setBounds(450,350,50,50);
+		add(seat43);
+		seat44.setBackground(Color.orange);
+		seat44.setBounds(450,400,50,50);
+		add(seat44);
+		seat45.setBackground(Color.orange);
+		seat45.setBounds(450,450,50,50);
+		add(seat45);
+		//
+		seat46.setBackground(Color.orange);
+		seat46.setBounds(550,250,50,50);
+		add(seat46);
+		seat47.setBackground(Color.orange);
+		seat47.setBounds(550,300,50,50);
+		add(seat47);
+		seat48.setBackground(Color.orange);
+		seat48.setBounds(550,350,50,50);
+		add(seat48);
+		seat49.setBackground(Color.orange);
+		seat49.setBounds(550,400,50,50);
+		add(seat49);
+		seat50.setBackground(Color.orange);
+		seat50.setBounds(550,450,50,50);
+		add(seat50);
 	}
 }
 
 //당일권 구매
-class BuyFrame extends JFrame implements ActionListener{
+class BuyFrame extends JFrame{
 	
-	int seatnumber;
-	
-	JLabel label = new JLabel("당일권 구매");
-	JLabel label2 = new JLabel("원하는 메뉴를 선택하세요");
-	JLabel label3 = new JLabel("__________________________________");
-	JButton but1 = new JButton("2시간");
-	JButton but2 = new JButton("4시간");
-	JButton but3 = new JButton("6시간");
-	JButton but4 = new JButton("8시간");
-	JButton but5 = new JButton("10시간");
-	JButton but6 = new JButton("12시간");
-	
-	JPanel menu = new JPanel();
-	
-	
-	BuyFrame(int seatnumber){
-		
-		this.seatnumber = seatnumber;
-		setLayout(null);
-		setSize(600, 650);
-		setVisible(true);
-		
-		
-		
-		label.setBounds(200, 0, 300, 90);
-		label.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		add(label);
-		
-		label2.setBounds(90, 100,500, 100);
-		label2.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		add(label2);
-		
-		label3.setBounds(0, 70,600, 30);
-		label3.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		add(label3);
-		
-		menu.setLayout(new GridLayout(2,3));
-		menu.setBounds(80, 230, 400,300);
-		
-		but1.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		but1.addActionListener(this);
-		but2.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		but2.addActionListener(this);
-		but3.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		but3.addActionListener(this);
-		but4.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		but4.addActionListener(this);
-		but5.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		but5.addActionListener(this);
-		but6.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		but6.addActionListener(this);
-		
-		menu.add(but1);
-		menu.add(but2);
-		menu.add(but3);
-		menu.add(but4);
-		menu.add(but5);
-		menu.add(but6);
-		
-		
-		add(menu);
-	}
-	
-	public void actionPerformed(ActionEvent e) {
-		Object obj = e.getSource();
-		if((JButton)obj == but1) {
-			new InsertNumber(seatnumber, 1);
-		}
-		else if((JButton)obj == but2) {
-			new InsertNumber(seatnumber, 2);
-		}
-		else if((JButton)obj == but3) {
-			new InsertNumber(seatnumber, 3);
-		}
-		else if((JButton)obj == but4) {
-			new InsertNumber(seatnumber, 4);
-		}
-		else if((JButton)obj == but5) {
-			new InsertNumber(seatnumber, 5);
-		}
-		else if((JButton)obj == but6) {
-			new InsertNumber(seatnumber, 6);
-		}
-		
-		
-	}
-
+	//좌석선택
 	
 }
 
 //시간/정기권 구매
-class BuyFrame2 extends JFrame{
+class BuyFrame2 extends JFrame implements ActionListener{
+	
+
+	String b1 = "<html>" + "2주" + "<br>" + "70,000원" + "</html>";
+	String b2 = "<html>" + "4주" + "<br>" + "110,000원" + "</html>";
+	String b3 = "<html>" + "15시간" + "<br>" + "20,000원" + "</html>";
+	String b4 = "<html>" + "30시간" + "<br>" + "38,000원" + "</html>";
+	String b5 = "<html>" + "50시간" + "<br>" + "60,000원" + "</html>";
+	String b6 = "<html>" + "100시간" + "<br>" + "110,000원" + "</html>";
+	String b7 = "<html>" + "200시간" + "<br>" + "180,000원" + "</html>";
+	
+	JButton homeButton = new JButton("홈으로");
+	JLabel info = new JLabel("정기권 구입");
+	JLabel step1 = new JLabel("1단계 : 원하는 메뉴를 선택하세요");
+	JLabel step2 = new JLabel("2단계 : 핸드폰 번호를 입력하세요");
+	JButton Button1 = new JButton(b1);
+	JButton Button2 = new JButton(b2);
+	JButton Button3 = new JButton(b3);
+	JButton Button4 = new JButton(b4);
+	JButton Button5 = new JButton(b5);
+	JButton Button6 = new JButton(b6);
+	JButton Button7 = new JButton(b7);
+	//JButton cashButton = new JButton("현금결제");
+	//JButton cardButton = new JButton("카드결제");
+	
+	JTextField number = new JTextField() {  
+		public void setBorder(Border boder) {   //현재는 textfield 테두리 투명하게
+			
+		}
+	};
+	JButton num0 = new JButton("0");
+	JButton num1 = new JButton("1");
+	JButton num2 = new JButton("2");
+	JButton num3 = new JButton("3");
+	JButton num4 = new JButton("4");
+	JButton num5 = new JButton("5");
+	JButton num6 = new JButton("6");
+	JButton num7 = new JButton("7");
+	JButton num8 = new JButton("8");
+	JButton num9 = new JButton("9");
+	JButton Pay = new JButton("결제");
+	
+	
+	JButton Del = new JButton("<-");
+		
+		
+	
+	public BuyFrame2() {
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		
+		info.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		info.setBounds(220,20, 200,30);
+		info.setForeground(Color.white); 
+		add(info);
+		step1.setFont(new Font("맑은고딕",Font.BOLD, 15));
+		step1.setBounds(150,70, 300,20);
+		step1.setForeground(Color.white); 
+		add(step1);
+			
+		Button1.setBackground(Color.orange); //버튼 색깔 현재는 오렌지
+		Button1.setBounds(60,110,120,70);
+		Button1.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button1);
+		
+		Button2.setBackground(Color.orange); 
+		Button2.setBounds(180,110,120,70);
+		Button2.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button2);
+		
+		Button3.setBackground(Color.orange); 
+		Button3.setBounds(300,110,120,70);
+		Button3.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button3);
+		
+		Button4.setBackground(Color.orange); 
+		Button4.setBounds(420,110,120,70);
+		Button4.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button4);
+		
+		Button5.setBackground(Color.orange); 
+		Button5.setBounds(60,180,120,70);
+		Button5.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button5);
+		
+		Button6.setBackground(Color.orange); 
+		Button6.setBounds(180,180,120,70);
+		Button6.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button6);
+		
+		Button7.setBackground(Color.orange); 
+		Button7.setBounds(300,180,120,70);
+		Button7.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Button7);
+		
+		step2.setFont(new Font("맑은고딕",Font.BOLD, 15));
+		step2.setBounds(150,300,300,20);
+		step2.setForeground(Color.white); 
+		add(step2);
+		
+		number.setBackground(Color.white);      //현재는 번호 입력칸 배경 흰색
+		number.setBounds(100,420,200,60);
+		number.setFont(new Font("맑은고딕",Font.BOLD, 13));
+		add(number);
+		
+		num0.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num3.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num4.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num5.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num6.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num7.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num8.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		num9.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Pay.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Del.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		
+		num1.setBackground(Color.orange);
+		num1.setBounds(360,360,60,60);
+		num1.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num1);
+		num2.setBackground(Color.orange);
+		num2.setBounds(420,360,60,60);
+		num2.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num2);
+		num3.setBackground(Color.orange);
+		num3.setBounds(480,360,60,60);
+		num3.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num3);
+		num4.setBackground(Color.orange);
+		num4.setBounds(360,420,60,60);
+		num4.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num4);
+		num5.setBackground(Color.orange);
+		num5.setBounds(420,420,60,60);
+		num5.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num5);
+		num6.setBackground(Color.orange);
+		num6.setBounds(480,420,60,60);
+		num6.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num6);
+		num7.setBackground(Color.orange);
+		num7.setBounds(360,480,60,60);
+		num7.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num7);
+		num8.setBackground(Color.orange);
+		num8.setBounds(420,480,60,60);
+		num8.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num8);
+		num9.setBackground(Color.orange);
+		num9.setBounds(480,480,60,60);
+		num9.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num9);
+		num0.setBackground(Color.orange);
+		num0.setBounds(360,540,60,60);
+		num0.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(num0);
+		Del.setBackground(Color.orange);
+		Del.setBounds(420,540,60,60);
+		Del.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Del);
+		Pay.setBackground(Color.orange);
+		Pay.setBounds(480,540,60,60);
+		Pay.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		add(Pay);
+		
+		
+		num0.addActionListener(this);
+		num1.addActionListener(this);
+		num2.addActionListener(this);
+		num3.addActionListener(this);
+		num4.addActionListener(this);
+		num5.addActionListener(this);
+		num6.addActionListener(this);
+		num7.addActionListener(this);
+		num8.addActionListener(this);
+		num9.addActionListener(this);
+		Del.addActionListener(this);
+		Pay.addActionListener(this);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		String temp = number.getText();
+		if(input.equals("0")) {
+			temp += "0";
+			number.setText(temp);
+		}
+		else if(input.equals("1")) {
+			temp += "1";
+			number.setText(temp);
+		}
+		else if(input.equals("2")) {
+			temp += "2";
+			number.setText(temp);
+		}
+		else if(input.equals("3")) {
+			temp += "3";
+			number.setText(temp);
+		}
+		else if(input.equals("4")) {
+			temp += "4";
+			number.setText(temp);
+		}
+		else if(input.equals("5")) {
+			temp += "5";
+			number.setText(temp);
+		}
+		else if(input.equals("6")) {
+			temp += "6";
+			number.setText(temp);
+		}
+		else if(input.equals("7")) {
+			temp += "7";
+			number.setText(temp);
+		}
+		else if(input.equals("8")) {
+			temp += "8";
+			number.setText(temp);
+		}
+		else if(input.equals("9")) {
+			temp += "9";
+			number.setText(temp);
+		}
+		else if(input.equals("<-")) {
+			temp = temp.substring(0,temp.length()-1);
+			number.setText(temp);
+		}
+		else if(input.equals("결제")){
+			//홈 화면으로 넘어가기
+		}
+			
+	}
 	
 }
 
@@ -564,15 +632,12 @@ class InsertNumber extends JFrame implements ActionListener{
 	JButton Button8 = new JButton("8");
 	JButton Button9 = new JButton("9");
 	JButton Pay = new JButton("결제");
-	int seatnumber;
-	int type;
+	
 	
 	JButton Del = new JButton("<-");
 	
-	public InsertNumber(int seatnumber, int type) {
+	public InsertNumber() {
 		
-		this.seatnumber = seatnumber;
-		this.type = type;
 		//getContentPane().setBackground(Color.DARK_GRAY); //색깔 정하기
 		setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -750,29 +815,13 @@ class InsertNumber extends JFrame implements ActionListener{
 			number.setText(temp);
 		}
 		else if(input.equals("결제")){
-			seatstatus.seats[seatnumber] = true;
-			seatstatus.seatnum++;
-			
-			datauser adduser = new datauser();
-			adduser.number = number.getText();
-			
-			String pattern = "MM월 dd일 HH:mm:ss";
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-			String date = simpleDateFormat.format(new Date());
-			adduser.starttime = date;
-			
-			//끝나는 시간 정하기 !!!!!!!!!!!!!!!!!//
-			
-			seatstatus.seatData[seatnumber] = adduser;
-			
+			//홈 화면으로 넘어가기
 		}
 		
 		
 		
 		
 	}
-	
-	
 	
 	
 }
