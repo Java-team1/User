@@ -59,7 +59,7 @@ class FirstFrame extends JFrame{
 	JLabel posseat = new JLabel();
 	JLabel time = new JLabel(date);
 	//
-	JLabel com1 = new JLabel("이용 안내");
+	JLabel com1 = new JLabel("<이용 안내>");
 	JLabel com2 = new JLabel("1. 이용권 선택");
 	JLabel com3 = new JLabel("2. 원하는 좌석 선택");
 	JLabel com4 = new JLabel("3. 원하는 메뉴 선택");
@@ -68,7 +68,7 @@ class FirstFrame extends JFrame{
 	JLabel com7 = new JLabel("바코드 및 휴대폰 번호로 입장 가능");
 	JLabel com8 = new JLabel("문의사항 : 010-1234-5678");
 	JLabel com9 = new JLabel("*스터디룸 1회 이용시 시간권 구매 이용");
-	JLabel com10 = new JLabel("장기이용시 문의바람");
+	JLabel com10 = new JLabel("*장기이용시 정기권 구매 이용");
 	//
 	JButton Button1 = new JButton("당일권 구매");
 	JButton Button2 = new JButton(b2);
@@ -78,11 +78,19 @@ class FirstFrame extends JFrame{
 	JButton Button6 = new JButton("사물함 대여");
 	//JButton Button7 = new JButton("스터디룸 예약");
 	//JButton Button8 = new JButton("좌석이동");
-	
+	//
+	/*static JPanel logo = new JPanel()
+	{
+		Image background = new ImageIcon(Main.class.getResource("JAVALOGO.png")).getImage();
+		public void paint(Graphics g)
+		{
+			g.drawImage(background, 0, 0, null);
+		}
+	};
+	JPanel logo = new JPanel();*/ // 이미지 로고 넣는거 시도 중
 	
 	public FirstFrame() {
 		getContentPane().setBackground(Color.DARK_GRAY); //배경색 바꾸기
-		setVisible(true);
 		setSize(600,650);
 		setLayout(null);
 		
@@ -123,11 +131,71 @@ class FirstFrame extends JFrame{
 		Button4.setBounds(460,450,100,100);
 		Button4.setFont(new Font("맑은고딕",Font.BOLD, 15));
 		add(Button4);
-		
-		com1.setBounds(40,450,100,100);
+		//
+		com1.setBounds(60,440,200,20);
 		com1.setFont(new Font("맑은고딕",Font.BOLD, 15));
 		com1.setForeground(Color.white);
 		add(com1);
+		
+		com2.setBounds(60,465,200,10);
+		com2.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com2.setForeground(Color.white);
+		add(com2);
+		
+		com3.setBounds(60,480,200,10);
+		com3.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com3.setForeground(Color.white);
+		add(com3);
+		
+		com4.setBounds(60,495,200,10);
+		com4.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com4.setForeground(Color.white);
+		add(com4);
+		
+		com5.setBounds(60,510,200,10);
+		com5.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com5.setForeground(Color.white);
+		add(com5);
+		
+		com6.setBounds(60,525,200,10);
+		com6.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com6.setForeground(Color.white);
+		add(com6);
+		
+		com7.setBounds(60,540,200,10);
+		com7.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com7.setForeground(Color.white);
+		add(com7);
+		
+		com8.setBounds(60,555,200,10);
+		com8.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com8.setForeground(Color.white);
+		add(com8);
+		
+		com9.setBounds(60,570,200,10);
+		com9.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com9.setForeground(Color.red);
+		add(com9);
+		
+		com10.setBounds(60,585,200,10);
+		com10.setFont(new Font("맑은고딕",Font.PLAIN, 10));
+		com10.setForeground(Color.red);
+		add(com10);
+		//
+		/*logo.setLayout(null);
+		logo.setBounds(140,150,100,100);
+		add(logo);
+		
+		ImageIcon icon = new ImageIcon("JAVALOGO.PNG");
+		JLabel label = new JLabel(icon);
+		getContentPane().add(label);
+		
+		logo.add(label);
+		logo.setLayout(null);
+		logo.setBounds(140,150,300,100);
+		add(logo);*/ // 이미지 로고 넣는거 시도 중
+		
+		setVisible(true);
 	}
 	
 	
@@ -218,20 +286,33 @@ class SeatFrame extends JFrame{
 			setSize(600,650);
 			setLayout(null);
 			//
-			home.setBackground(Color.GREEN);
+			home.setBackground(Color.PINK);
 			home.setBounds(10,10,70,30);
 			add(home);
 			//
 			JLabel s1 = new JLabel("좌석예약");
-			JLabel s2 = new JLabel("이용현황:");
-			s1.setBounds(200,50,250,50);
-			s2.setBounds(450,100,50,50);
-			s1.setFont(new Font("맑은고딕",Font.BOLD, 50));
+			JLabel s2 = new JLabel("[이용현황:   /50]");
+			JLabel s3 = new JLabel("원하는 좌석을 선택하세요.");
+			JLabel s4 = new JLabel("________________________________________________________");
+			
+			s1.setBounds(200,30,250,50);
+			s2.setBounds(430,100,150,50);
+			s3.setBounds(185,90,350,30);
+			s4.setBounds(200,70,250,10);
+			
+			s1.setFont(new Font("맑은고딕",Font.BOLD, 35));
 			s1.setForeground(Color.white);
-			s2.setFont(new Font("맑은고딕",Font.BOLD, 10));
+			s2.setFont(new Font("맑은고딕",Font.BOLD, 15));
 			s2.setForeground(Color.white);
+			s3.setFont(new Font("맑은고딕",Font.BOLD, 15));
+			s3.setForeground(Color.white);
+			s4.setFont(new Font("맑은고딕",Font.BOLD, 5));
+			s4.setForeground(Color.white);
+			
 			add(s1);
 			add(s2);
+			add(s3);
+			add(s4);
 			//
 			seat1.setBackground(Color.orange);
 			seat1.setBounds(50,150,50,50);
@@ -377,73 +458,112 @@ class SeatFrame extends JFrame{
 			//여기서부터
 			seat29.setBackground(Color.orange);
 			seat29.setBounds(250, 400, 50, 50);
+			seat29.addActionListener(new EventHandler());
 			add(seat29);
+			
 			seat30.setBackground(Color.orange);
 			seat30.setBounds(250, 450, 50, 50);
+			seat30.addActionListener(new EventHandler());
 			add(seat30);
-			//
+			
 			seat31.setBackground(Color.orange);
 			seat31.setBounds(300, 250, 50, 50);
+			seat31.addActionListener(new EventHandler());
 			add(seat31);
+			
 			seat32.setBackground(Color.orange);
 			seat32.setBounds(300, 300, 50, 50);
+			seat32.addActionListener(new EventHandler());
 			add(seat32);
+			
 			seat33.setBackground(Color.orange);
 			seat33.setBounds(300, 350, 50, 50);
+			seat33.addActionListener(new EventHandler());
 			add(seat33);
+			
 			seat34.setBackground(Color.orange);
 			seat34.setBounds(300, 400, 50, 50);
+			seat34.addActionListener(new EventHandler());
 			add(seat34);
+			
 			seat35.setBackground(Color.orange);
 			seat35.setBounds(300, 450, 50, 50);
+			seat35.addActionListener(new EventHandler());
 			add(seat35);
-			//
+			
 			seat36.setBackground(Color.orange);
 			seat36.setBounds(400, 250, 50, 50);
+			seat36.addActionListener(new EventHandler());
 			add(seat36);
+			
 			seat37.setBackground(Color.orange);
 			seat37.setBounds(400, 300, 50, 50);
+			seat37.addActionListener(new EventHandler());
 			add(seat37);
+			
 			seat38.setBackground(Color.orange);
 			seat38.setBounds(400, 350, 50, 50);
+			seat38.addActionListener(new EventHandler());
 			add(seat38);
+			
 			seat39.setBackground(Color.orange);
 			seat39.setBounds(400, 400, 50, 50);
+			seat39.addActionListener(new EventHandler());
 			add(seat39);
+			
 			seat40.setBackground(Color.orange);
 			seat40.setBounds(400, 450, 50, 50);
+			seat40.addActionListener(new EventHandler());
 			add(seat40);
-			//
+			
 			seat41.setBackground(Color.orange);
 			seat41.setBounds(450, 250, 50, 50);
+			seat41.addActionListener(new EventHandler());
 			add(seat41);
+			
 			seat42.setBackground(Color.orange);
 			seat42.setBounds(450, 300, 50, 50);
+			seat42.addActionListener(new EventHandler());
 			add(seat42);
+			
 			seat43.setBackground(Color.orange);
 			seat43.setBounds(450, 350, 50, 50);
+			seat43.addActionListener(new EventHandler());
 			add(seat43);
+			
 			seat44.setBackground(Color.orange);
 			seat44.setBounds(450, 400, 50, 50);
+			seat44.addActionListener(new EventHandler());
 			add(seat44);
+			
 			seat45.setBackground(Color.orange);
 			seat45.setBounds(450, 450, 50, 50);
+			seat45.addActionListener(new EventHandler());
 			add(seat45);
-			//
+			
 			seat46.setBackground(Color.orange);
 			seat46.setBounds(550, 250, 50, 50);
+			seat46.addActionListener(new EventHandler());
 			add(seat46);
+			
 			seat47.setBackground(Color.orange);
 			seat47.setBounds(550, 300, 50, 50);
+			seat47.addActionListener(new EventHandler());
 			add(seat47);
+			
 			seat48.setBackground(Color.orange);
 			seat48.setBounds(550, 350, 50, 50);
+			seat48.addActionListener(new EventHandler());
 			add(seat48);
+			
 			seat49.setBackground(Color.orange);
 			seat49.setBounds(550, 400, 50, 50);
+			seat49.addActionListener(new EventHandler());
 			add(seat49);
+			
 			seat50.setBackground(Color.orange);
 			seat50.setBounds(550, 450, 50, 50);
+			seat50.addActionListener(new EventHandler());
 			add(seat50);
 		}
 	}
@@ -459,22 +579,29 @@ class SeatFrame extends JFrame{
 class BuyFrame extends JFrame implements ActionListener{
 	
 	int seatnumber;
+	String bt1 = "<html>" + "2시간" + "<br>" + "3000원" + "</html>";
+	String bt2 = "<html>" + "4시간" + "<br>" + "5000원" + "</html>";
+	String bt3 = "<html>" + "6시간" + "<br>" + "8000원" + "</html>";
+	String bt4 = "<html>" + "8시간" + "<br>" + "10000원" + "</html>";
+	String bt5 = "<html>" + "10시간" + "<br>" + "12000원" + "</html>";
+	String bt6 = "<html>" + "12시간" + "<br>" + "15000원" + "</html>";
 	
 	JLabel label = new JLabel("당일권 구매");
-	JLabel label2 = new JLabel("원하는 메뉴를 선택하세요");
+	JLabel label2 = new JLabel("원하는 메뉴를 선택하세요.");
 	JLabel label3 = new JLabel("__________________________________");
-	JButton but1 = new JButton("2시간");
-	JButton but2 = new JButton("4시간");
-	JButton but3 = new JButton("6시간");
-	JButton but4 = new JButton("8시간");
-	JButton but5 = new JButton("10시간");
-	JButton but6 = new JButton("12시간");
+	JButton but1 = new JButton(bt1);
+	JButton but2 = new JButton(bt2);
+	JButton but3 = new JButton(bt3);
+	JButton but4 = new JButton(bt4);
+	JButton but5 = new JButton(bt5);
+	JButton but6 = new JButton(bt6);
 	
 	JPanel menu = new JPanel();
 	
 	
 	BuyFrame(int seatnumber){
 		
+		getContentPane().setBackground(Color.DARK_GRAY);
 		this.seatnumber = seatnumber;
 		setLayout(null);
 		setSize(600, 650);
@@ -484,30 +611,44 @@ class BuyFrame extends JFrame implements ActionListener{
 		
 		label.setBounds(200, 0, 300, 90);
 		label.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		label.setForeground(Color.white);
 		add(label);
 		
 		label2.setBounds(90, 100,500, 100);
 		label2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		label2.setForeground(Color.white);
 		add(label2);
 		
 		label3.setBounds(0, 70,600, 30);
 		label3.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		label3.setForeground(Color.white);
 		add(label3);
 		
 		menu.setLayout(new GridLayout(2,3));
 		menu.setBounds(80, 230, 400,300);
 		
-		but1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		but1.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		but1.setBackground(Color.orange);
 		but1.addActionListener(this);
-		but2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		
+		but2.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		but2.setBackground(Color.orange);
 		but2.addActionListener(this);
-		but3.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		
+		but3.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		but3.setBackground(Color.orange);
 		but3.addActionListener(this);
-		but4.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		
+		but4.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		but4.setBackground(Color.orange);
 		but4.addActionListener(this);
-		but5.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		
+		but5.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		but5.setBackground(Color.orange);
 		but5.addActionListener(this);
-		but6.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		
+		but6.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		but6.setBackground(Color.orange);
 		but6.addActionListener(this);
 		
 		menu.add(but1);
@@ -813,6 +954,7 @@ class InsertNumber extends JFrame implements ActionListener{
 	
 	public InsertNumber(int seatnumber, int type) {
 		
+		getContentPane().setBackground(Color.DARK_GRAY);
 		this.seatnumber = seatnumber;
 		this.type = type;
 		//getContentPane().setBackground(Color.DARK_GRAY); //색깔 정하기
@@ -822,19 +964,44 @@ class InsertNumber extends JFrame implements ActionListener{
 		setSize(600,650);
 		
 		info.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		info.setForeground(Color.white);
 		info.setHorizontalAlignment(JLabel.CENTER);
+		
 		Button0.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button0.setBackground(Color.orange);
+		
 		Button1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button1.setBackground(Color.orange);
+		
 		Button2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button2.setBackground(Color.orange);
+		
 		Button3.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button3.setBackground(Color.orange);
+		
 		Button4.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button4.setBackground(Color.orange);
+		
 		Button5.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button5.setBackground(Color.orange);
+		
 		Button6.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button6.setBackground(Color.orange);
+		
 		Button7.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button7.setBackground(Color.orange);
+		
 		Button8.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button8.setBackground(Color.orange);
+		
 		Button9.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Button9.setBackground(Color.orange);
+		
 		Pay.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Pay.setBackground(Color.orange);
+		
 		Del.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Del.setBackground(Color.orange);
 		
 		
 		
