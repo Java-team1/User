@@ -122,6 +122,7 @@ class FirstFrame extends JFrame{
 		Button6.setBackground(Color.PINK);
 		Button6.setBounds(460,300,100,100);
 		Button6.setFont(new Font("맑은고딕",Font.BOLD, 10));
+		Button6.addActionListener(new EventLocker());
 		add(Button6);
 		
 		Button3.setBackground(Color.PINK);
@@ -219,6 +220,13 @@ class EventRegularBuy implements ActionListener{
 		new BuyFrame2();
 	}
 }
+
+class EventLocker implements ActionListener{
+	public void actionPerformed(ActionEvent e) {
+		new LockerFrame();
+	}
+}
+
 
 
 
