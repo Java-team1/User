@@ -338,21 +338,33 @@ class SeatFrame extends JFrame{
 		
 			seat2.setBackground(Color.orange);
 			seat2.setBounds(100,150,50,50);
+			if(seatstatus.seats[2]) {
+				seat2.setBackground(Color.RED);
+			}
 			seat2.addActionListener(new EventHandler());
 			add(seat2);
 			
 			seat3.setBackground(Color.orange);
 			seat3.setBounds(150,150,50,50);
+			if(seatstatus.seats[3]) {
+				seat3.setBackground(Color.RED);
+			}
 			seat3.addActionListener(new EventHandler());
 			add(seat3);
 			
 			seat4.setBackground(Color.orange);
 			seat4.setBounds(200,150,50,50);
+			if(seatstatus.seats[4]) {
+				seat4.setBackground(Color.RED);
+			}
 			seat4.addActionListener(new EventHandler());
 			add(seat4);
 			
 			seat5.setBackground(Color.orange);
 			seat5.setBounds(250,150,50,50);
+			if(seatstatus.seats[5]) {
+				seat5.setBackground(Color.RED);
+			}
 			seat5.addActionListener(new EventHandler());
 			add(seat5);
 			
