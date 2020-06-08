@@ -305,13 +305,26 @@ class SeatFrame extends JFrame{
 			JLabel s2 = new JLabel("[이용현황: "+ Integer.toString(seatstatus.seatnum)+  "/50]");
 			JLabel s3 = new JLabel("원하는 좌석을 선택하세요.");
 			JLabel s4 = new JLabel("________________________________________________________");
+			JLabel s5 = new JLabel("이용 중 좌석");
+			JLabel s6 = new JLabel("사용 가능 좌석");
 			
+			JButton yb = new JButton();
+			JButton rb = new JButton();
+			JButton door = new JButton("출입구");
+			//
 			s1.setBounds(200,30,250,50);
 			s2.setBounds(430,100,150,50);
 			s3.setBounds(185,90,350,30);
 			s4.setBounds(200,70,250,10);
+			s5.setBounds(450,80,150,20);
+			s6.setBounds(450,60,150,20);
 			
-			
+			yb.setBounds(430,65,10,10);
+			rb.setBounds(430,85,10,10);
+			yb.setBackground(Color.orange);
+			rb.setBackground(Color.red);
+			door.setBounds(100,550,150,50);
+			door.setBackground(Color.gray);
 			
 			s1.setFont(new Font("맑은고딕",Font.BOLD, 35));
 			s1.setForeground(Color.white);
@@ -321,11 +334,20 @@ class SeatFrame extends JFrame{
 			s3.setForeground(Color.white);
 			s4.setFont(new Font("맑은고딕",Font.BOLD, 5));
 			s4.setForeground(Color.white);
+			s5.setFont(new Font("맑은고딕",Font.BOLD, 10));
+			s5.setForeground(Color.white);
+			s6.setFont(new Font("맑은고딕",Font.BOLD, 10));
+			s6.setForeground(Color.white);
 			
 			add(s1);
 			add(s2);
 			add(s3);
 			add(s4);
+			add(s5);
+			add(s6);
+			add(yb);
+			add(rb);
+			add(door);
 			//
 			seat1.setBackground(Color.orange);
 			seat1.setBounds(50,150,50,50);
