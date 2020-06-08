@@ -334,7 +334,6 @@ class SeatFrame extends JFrame{
 			}
 			seat1.addActionListener(new EventHandler());
 			add(seat1);
-			seat1.addActionListener(new EventHandler());
 		
 			seat2.setBackground(Color.orange);
 			seat2.setBounds(100,150,50,50);
@@ -370,227 +369,362 @@ class SeatFrame extends JFrame{
 			
 			seat6.setBackground(Color.orange);
 			seat6.setBounds(300,150,50,50);
+			if(seatstatus.seats[6]) {
+				seat6.setBackground(Color.RED);
+			}
 			seat6.addActionListener(new EventHandler());
 			add(seat6);
 			
 			seat7.setBackground(Color.orange);
 			seat7.setBounds(350,150,50,50);
+			if(seatstatus.seats[7]) {
+				seat7.setBackground(Color.RED);
+			}
 			seat7.addActionListener(new EventHandler());
 			add(seat7);
 			
 			seat8.setBackground(Color.orange);
 			seat8.setBounds(400,150,50,50);
+			if(seatstatus.seats[8]) {
+				seat8.setBackground(Color.RED);
+			}
 			seat8.addActionListener(new EventHandler());
 			add(seat8);
 			
 			seat9.setBackground(Color.orange);
 			seat9.setBounds(450,150,50,50);
+			if(seatstatus.seats[9]) {
+				seat9.setBackground(Color.RED);
+			}
 			seat9.addActionListener(new EventHandler());
 			add(seat9);
 			
 			seat10.setBackground(Color.orange);
 			seat10.setBounds(500,150,50,50);
+			if(seatstatus.seats[10]) {
+				seat10.setBackground(Color.RED);
+			}
 			seat10.addActionListener(new EventHandler());
 			add(seat10);
 			
 			seat11.setBackground(Color.orange);
 			seat11.setBounds(0,250,50,50);
+			if(seatstatus.seats[11]) {
+				seat11.setBackground(Color.RED);
+			}
 			seat11.addActionListener(new EventHandler());
 			add(seat11);
 			
 			seat12.setBackground(Color.orange);
 			seat12.setBounds(0,300,50,50);
+			if(seatstatus.seats[12]) {
+				seat12.setBackground(Color.RED);
+			}
 			seat12.addActionListener(new EventHandler());
 			add(seat12);
 			
 			seat13.setBackground(Color.orange);
 			seat13.setBounds(0,350,50,50);
+			if(seatstatus.seats[13]) {
+				seat13.setBackground(Color.RED);
+			}
 			seat13.addActionListener(new EventHandler());
 			add(seat13);
 			
 			seat14.setBackground(Color.orange);
 			seat14.setBounds(0,400,50,50);
+			if(seatstatus.seats[14]) {
+				seat14.setBackground(Color.RED);
+			}
 			seat14.addActionListener(new EventHandler());
 			add(seat14);
 			
 			seat15.setBackground(Color.orange);
 			seat15.setBounds(0,450,50,50);
+			if(seatstatus.seats[15]) {
+				seat15.setBackground(Color.RED);
+			}
 			seat15.addActionListener(new EventHandler());
 			add(seat15);
 			
 			seat16.setBackground(Color.orange);
 			seat16.setBounds(100,250,50,50);
+			if(seatstatus.seats[16]) {
+				seat16.setBackground(Color.RED);
+			}
 			seat16.addActionListener(new EventHandler());
 			add(seat16);
 			
 			seat17.setBackground(Color.orange);
 			seat17.setBounds(100, 300, 50, 50);
+			if(seatstatus.seats[17]) {
+				seat17.setBackground(Color.RED);
+			}
 			seat17.addActionListener(new EventHandler());
 			add(seat17);
 			
 			seat18.setBackground(Color.orange);
 			seat18.setBounds(100, 350, 50, 50);
+			if(seatstatus.seats[18]) {
+				seat18.setBackground(Color.RED);
+			}
 			seat18.addActionListener(new EventHandler());
 			add(seat18);
 			
 			seat19.setBackground(Color.orange);
 			seat19.setBounds(100, 400, 50, 50);
+			if(seatstatus.seats[19]) {
+				seat19.setBackground(Color.RED);
+			}
 			seat19.addActionListener(new EventHandler());
 			add(seat19);
 			
 			seat20.setBackground(Color.orange);
 			seat20.setBounds(100, 450, 50, 50);
+			if(seatstatus.seats[20]) {
+				seat20.setBackground(Color.RED);
+			}
 			seat20.addActionListener(new EventHandler());
 			add(seat20);
 			
 			seat21.setBackground(Color.orange);
 			seat21.setBounds(150, 250, 50, 50);
+			if(seatstatus.seats[21]) {
+				seat21.setBackground(Color.RED);
+			}
 			seat21.addActionListener(new EventHandler());
 			add(seat21);
 			
 			seat22.setBackground(Color.orange);
 			seat22.setBounds(150, 300, 50, 50);
+			if(seatstatus.seats[22]) {
+				seat22.setBackground(Color.RED);
+			}
 			seat22.addActionListener(new EventHandler());
 			add(seat22);
 			
 			seat23.setBackground(Color.orange);
 			seat23.setBounds(150, 350, 50, 50);
+			if(seatstatus.seats[23]) {
+				seat23.setBackground(Color.RED);
+			}
 			seat23.addActionListener(new EventHandler());
 			add(seat23);
 			
 			seat24.setBackground(Color.orange);
 			seat24.setBounds(150, 400, 50, 50);
+			if(seatstatus.seats[24]) {
+				seat24.setBackground(Color.RED);
+			}
 			seat24.addActionListener(new EventHandler());
 			add(seat24);
 			
 			seat25.setBackground(Color.orange);
 			seat25.setBounds(150, 450, 50, 50);
+			if(seatstatus.seats[25]) {
+				seat25.setBackground(Color.RED);
+			}
 			seat25.addActionListener(new EventHandler());
 			add(seat25);
 			
 			seat26.setBackground(Color.orange);
 			seat26.setBounds(250, 250, 50, 50);
+			if(seatstatus.seats[26]) {
+				seat26.setBackground(Color.RED);
+			}
 			seat26.addActionListener(new EventHandler());
 			add(seat26);
 			
 			seat27.setBackground(Color.orange);
 			seat27.setBounds(250, 300, 50, 50);
+			if(seatstatus.seats[27]) {
+				seat27.setBackground(Color.RED);
+			}
 			seat27.addActionListener(new EventHandler());
 			add(seat27);
 			
 			seat28.setBackground(Color.orange);
 			seat28.setBounds(250, 350, 50, 50);
+			if(seatstatus.seats[28]) {
+				seat28.setBackground(Color.RED);
+			}
 			seat28.addActionListener(new EventHandler());
 			add(seat28);
 			
 			//여기서부터
 			seat29.setBackground(Color.orange);
 			seat29.setBounds(250, 400, 50, 50);
+			if(seatstatus.seats[29]) {
+				seat29.setBackground(Color.RED);
+			}
 			seat29.addActionListener(new EventHandler());
 			add(seat29);
 			
 			seat30.setBackground(Color.orange);
 			seat30.setBounds(250, 450, 50, 50);
+			if(seatstatus.seats[30]) {
+				seat30.setBackground(Color.RED);
+			}
 			seat30.addActionListener(new EventHandler());
 			add(seat30);
 			
 			seat31.setBackground(Color.orange);
 			seat31.setBounds(300, 250, 50, 50);
+			if(seatstatus.seats[31]) {
+				seat31.setBackground(Color.RED);
+			}
 			seat31.addActionListener(new EventHandler());
 			add(seat31);
 			
 			seat32.setBackground(Color.orange);
 			seat32.setBounds(300, 300, 50, 50);
+			if(seatstatus.seats[32]) {
+				seat32.setBackground(Color.RED);
+			}
 			seat32.addActionListener(new EventHandler());
 			add(seat32);
 			
 			seat33.setBackground(Color.orange);
 			seat33.setBounds(300, 350, 50, 50);
+			if(seatstatus.seats[33]) {
+				seat33.setBackground(Color.RED);
+			}
 			seat33.addActionListener(new EventHandler());
 			add(seat33);
 			
 			seat34.setBackground(Color.orange);
 			seat34.setBounds(300, 400, 50, 50);
+			if(seatstatus.seats[34]) {
+				seat34.setBackground(Color.RED);
+			}
 			seat34.addActionListener(new EventHandler());
 			add(seat34);
 			
 			seat35.setBackground(Color.orange);
 			seat35.setBounds(300, 450, 50, 50);
+			if(seatstatus.seats[35]) {
+				seat35.setBackground(Color.RED);
+			}
 			seat35.addActionListener(new EventHandler());
 			add(seat35);
 			
 			seat36.setBackground(Color.orange);
 			seat36.setBounds(400, 250, 50, 50);
+			if(seatstatus.seats[36]) {
+				seat36.setBackground(Color.RED);
+			}
 			seat36.addActionListener(new EventHandler());
 			add(seat36);
 			
 			seat37.setBackground(Color.orange);
 			seat37.setBounds(400, 300, 50, 50);
+			if(seatstatus.seats[37]) {
+				seat37.setBackground(Color.RED);
+			}
 			seat37.addActionListener(new EventHandler());
 			add(seat37);
 			
 			seat38.setBackground(Color.orange);
 			seat38.setBounds(400, 350, 50, 50);
+			if(seatstatus.seats[38]) {
+				seat38.setBackground(Color.RED);
+			}
 			seat38.addActionListener(new EventHandler());
 			add(seat38);
 			
 			seat39.setBackground(Color.orange);
 			seat39.setBounds(400, 400, 50, 50);
+			if(seatstatus.seats[39]) {
+				seat39.setBackground(Color.RED);
+			}
 			seat39.addActionListener(new EventHandler());
 			add(seat39);
 			
 			seat40.setBackground(Color.orange);
 			seat40.setBounds(400, 450, 50, 50);
+			if(seatstatus.seats[40]) {
+				seat40.setBackground(Color.RED);
+			}
 			seat40.addActionListener(new EventHandler());
 			add(seat40);
 			
 			seat41.setBackground(Color.orange);
 			seat41.setBounds(450, 250, 50, 50);
+			if(seatstatus.seats[41]) {
+				seat41.setBackground(Color.RED);
+			}
 			seat41.addActionListener(new EventHandler());
 			add(seat41);
 			
 			seat42.setBackground(Color.orange);
 			seat42.setBounds(450, 300, 50, 50);
+			if(seatstatus.seats[42]) {
+				seat42.setBackground(Color.RED);
+			}
 			seat42.addActionListener(new EventHandler());
 			add(seat42);
 			
 			seat43.setBackground(Color.orange);
 			seat43.setBounds(450, 350, 50, 50);
+			if(seatstatus.seats[43]) {
+				seat43.setBackground(Color.RED);
+			}
 			seat43.addActionListener(new EventHandler());
 			add(seat43);
 			
 			seat44.setBackground(Color.orange);
 			seat44.setBounds(450, 400, 50, 50);
+			if(seatstatus.seats[44]) {
+				seat44.setBackground(Color.RED);
+			}
 			seat44.addActionListener(new EventHandler());
 			add(seat44);
 			
 			seat45.setBackground(Color.orange);
 			seat45.setBounds(450, 450, 50, 50);
+			if(seatstatus.seats[45]) {
+				seat45.setBackground(Color.RED);
+			}
 			seat45.addActionListener(new EventHandler());
 			add(seat45);
 			
 			seat46.setBackground(Color.orange);
 			seat46.setBounds(550, 250, 50, 50);
+			if(seatstatus.seats[46]) {
+				seat46.setBackground(Color.RED);
+			}
 			seat46.addActionListener(new EventHandler());
 			add(seat46);
 			
 			seat47.setBackground(Color.orange);
 			seat47.setBounds(550, 300, 50, 50);
+			if(seatstatus.seats[47]) {
+				seat47.setBackground(Color.RED);
+			}
 			seat47.addActionListener(new EventHandler());
 			add(seat47);
 			
 			seat48.setBackground(Color.orange);
 			seat48.setBounds(550, 350, 50, 50);
+			if(seatstatus.seats[48]) {
+				seat48.setBackground(Color.RED);
+			}
 			seat48.addActionListener(new EventHandler());
 			add(seat48);
 			
 			seat49.setBackground(Color.orange);
 			seat49.setBounds(550, 400, 50, 50);
+			if(seatstatus.seats[49]) {
+				seat49.setBackground(Color.RED);
+			}
 			seat49.addActionListener(new EventHandler());
 			add(seat49);
 			
 			seat50.setBackground(Color.orange);
 			seat50.setBounds(550, 450, 50, 50);
+			if(seatstatus.seats[50]) {
+				seat50.setBackground(Color.RED);
+			}
 			seat50.addActionListener(new EventHandler());
 			add(seat50);
 		}
@@ -1601,3 +1735,4 @@ class LockerFrame extends JFrame{
 		
 	}
 }
+
