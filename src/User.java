@@ -267,7 +267,7 @@ class EventOut implements ActionListener{
 
 
 //좌석 선택 + 홈버튼 기능 추가
-class SeatFrame extends JFrame{
+class SeatFrame extends JFrame implements ActionListener{
 	JButton home = new JButton("홈으로");
 	JButton seat1 = new JButton("1");
 	JButton seat2 = new JButton("2");
@@ -319,6 +319,8 @@ class SeatFrame extends JFrame{
 	JButton seat48 = new JButton("48");
 	JButton seat49 = new JButton("49");
 	JButton seat50 = new JButton("50");
+	
+	
 	int typee;
 	public SeatFrame(int type) {
 		//당일권 구매 -> type: 0
@@ -335,6 +337,7 @@ class SeatFrame extends JFrame{
 			//
 			home.setBackground(Color.PINK);
 			home.setBounds(10,10,70,30);
+			home.addActionListener(this);
 			add(home);
 			//
 			JLabel s1 = new JLabel("좌석예약");
@@ -788,6 +791,8 @@ class SeatFrame extends JFrame{
 			}
 			seat50.addActionListener(new EventHandler());
 			add(seat50);
+			
+			
 		}
 		else if(type == 1) {
 			
@@ -798,6 +803,8 @@ class SeatFrame extends JFrame{
 			//
 			home.setBackground(Color.PINK);
 			home.setBounds(10,10,70,30);
+			home.addActionListener(this);
+			
 			add(home);
 			//
 			JLabel s1 = new JLabel("좌석예약");
@@ -1226,6 +1233,8 @@ class SeatFrame extends JFrame{
 			}
 			seat50.addActionListener(new EventHandler());
 			add(seat50);
+			
+			
 		}
 	}
 	
@@ -1261,6 +1270,14 @@ class SeatFrame extends JFrame{
 			}
 		}
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		this.setVisible(false);
+		
+	}
+	
 }
 
 class ChooseSeat extends JFrame implements ActionListener{
@@ -1537,7 +1554,7 @@ class InFrame extends JFrame implements ActionListener{
 				
 				this.setVisible(false);
 				
-				//입실되었습니다 프레임
+				new afterIN();
 			
 			
 		
@@ -1683,7 +1700,7 @@ class OutFrame extends JFrame implements ActionListener{
 				
 				this.setVisible(false);
 				
-				//퇴실되었습니다 프레임
+				new afterOUT();
 			
 			
 		
@@ -2452,7 +2469,7 @@ class PayFrame extends JFrame implements ActionListener{
 	
 }
 //사물함 선택+홈버튼 기능
-class LockerFrame extends JFrame{
+class LockerFrame extends JFrame implements ActionListener{
 	int lockernum;
 	
 	JButton homeButton = new JButton("홈으로");
@@ -2508,11 +2525,67 @@ class LockerFrame extends JFrame{
 		setLayout(null);
 		int lockernumber;
 		
+		JLabel s5 = new JLabel("이용 중 사물함");
+		JLabel s6 = new JLabel("사용 가능 사물함");
+		s5.setForeground(Color.white);
+		s6.setFont(new Font("맑은고딕",Font.BOLD, 10));
+		s6.setForeground(Color.white);
+		s5.setBounds(450,80,150,20);
+		s6.setBounds(450,60,150,20);
+		
+		JButton yb = new JButton();
+		JButton rb = new JButton();
+		yb.setBounds(430,65,10,10);
+		rb.setBounds(430,85,10,10);
+		yb.setBackground(Color.orange);
+		rb.setBackground(Color.red);
+		add(s5);
+		add(s6);
+		add(yb);
+		add(rb);
+		
+		Locker1.addActionListener(this);
+		Locker2.addActionListener(this);
+		Locker3.addActionListener(this);
+		Locker4.addActionListener(this);
+		Locker5.addActionListener(this);
+		Locker6.addActionListener(this);
+		Locker7.addActionListener(this);
+		Locker8.addActionListener(this);
+		Locker9.addActionListener(this);
+		Locker10.addActionListener(this);
+		Locker11.addActionListener(this);
+		Locker12.addActionListener(this);
+		Locker13.addActionListener(this);
+		Locker14.addActionListener(this);
+		Locker15.addActionListener(this);
+		Locker16.addActionListener(this);
+		Locker17.addActionListener(this);
+		Locker18.addActionListener(this);
+		Locker19.addActionListener(this);
+		Locker20.addActionListener(this);
+		Locker21.addActionListener(this);
+		Locker22.addActionListener(this);
+		Locker23.addActionListener(this);
+		Locker24.addActionListener(this);
+		Locker25.addActionListener(this);
+		Locker26.addActionListener(this);
+		Locker27.addActionListener(this);
+		Locker28.addActionListener(this);
+		Locker29.addActionListener(this);
+		Locker30.addActionListener(this);
+		Locker31.addActionListener(this);
+		Locker32.addActionListener(this);
+		Locker33.addActionListener(this);
+		Locker34.addActionListener(this);
+		Locker35.addActionListener(this);
+		
 		homeButton.setBackground(Color.orange); //홈버튼 색깔 현재는 오렌지
 		homeButton.setBounds(55,50,70,40);
 		homeButton.setFont(new Font("맑은고딕",Font.BOLD, 12));
+		homeButton.addActionListener(this);
 		add(homeButton);
-		
+	
 		
 		info.setFont(new Font("맑은고딕",Font.BOLD, 30));
 		info.setBounds(220,40, 200,50);
@@ -2881,7 +2954,12 @@ class LockerFrame extends JFrame{
 		
 		
 	}
-	
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		this.setVisible(false);
+		
+	}
+		
 	//전화번호 입력 창 띄우기
 	class eHandler implements ActionListener{
 
@@ -2889,7 +2967,6 @@ class LockerFrame extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			new chooselocker(Integer.parseInt(e.getActionCommand()));
-			
 		}
 		
 	}
@@ -3056,9 +3133,66 @@ class lockerPay extends JFrame implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		this.setVisible(false);
-		new FirstFrame();
+		//new FirstFrame();
 	}
 }
 
+class afterIN extends JFrame implements ActionListener{
+	JLabel info;
+	JButton Okay;
+	afterIN(){
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		Okay = new JButton("확인");
+		Okay.setBounds(250, 350, 100, 100);
+		Okay.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Okay.setBackground(Color.orange);
+		info = new JLabel("입실 되었습니다!");
+		
+		info.setFont(new Font("맑은고딕",Font.BOLD, 40));
+		info.setBounds(150, 200, 500, 100);
+		info.setForeground(Color.white);
+		Okay.addActionListener(this);
+		
+		add(Okay);
+		add(info);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		//new FirstFrame();
+	}
+}
+
+class afterOUT extends JFrame implements ActionListener{
+	JLabel info;
+	JButton Okay;
+	afterOUT(){
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		Okay = new JButton("확인");
+		Okay.setBounds(250, 350, 100, 100);
+		Okay.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		Okay.setBackground(Color.orange);
+		info = new JLabel("퇴실 되었습니다!");
+		
+		info.setFont(new Font("맑은고딕",Font.BOLD, 40));
+		info.setBounds(150, 200, 500, 100);
+		info.setForeground(Color.white);
+		Okay.addActionListener(this);
+		
+		add(Okay);
+		add(info);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		this.setVisible(false);
+		//new FirstFrame();
+	}
+}
 
 
