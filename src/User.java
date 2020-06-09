@@ -13,7 +13,7 @@ import java.text.ParseException;
 public class User {
 	
 	
-	//boolean[] seats = new boolean[50];
+	
 	
 	public static void main(String[] args) {
 		new FirstFrame();
@@ -46,9 +46,9 @@ class datauser{
 }
 
 class lockerstatus{
-	public static boolean[] lockers = new boolean[35];
-	public static int lockernum = 0;
-	public static lockerUser[] lockerData = new lockerUser[35];
+	public static boolean[] lockers = new boolean[36];
+	public static int lockernum = 1;
+	public static lockerUser[] lockerData = new lockerUser[36];
 	public static lockerUser soon;
 }
 
@@ -811,13 +811,27 @@ class SeatFrame extends JFrame implements ActionListener{
 			JLabel s2 = new JLabel("[이용현황: "+ Integer.toString(seatstatus.seatnum)+  "/50]");
 			JLabel s3 = new JLabel("원하는 좌석을 선택하세요.");
 			JLabel s4 = new JLabel("________________________________________________________");
+			JLabel s5 = new JLabel("이용 중 좌석");
+			JLabel s6 = new JLabel("사용 가능 좌석");
+
+
+			JButton yb = new JButton();
+			JButton rb = new JButton();
+			JButton door = new JButton("출입구");
 			
 			s1.setBounds(200,30,250,50);
 			s2.setBounds(430,100,150,50);
 			s3.setBounds(185,90,350,30);
 			s4.setBounds(200,70,250,10);
+			s5.setBounds(450,80,150,20);
+			s6.setBounds(450,60,150,20);
 			
-			
+			yb.setBounds(430,65,10,10);
+			rb.setBounds(430,85,10,10);
+			yb.setBackground(Color.orange);
+			rb.setBackground(Color.red);
+			door.setBounds(100,550,150,50);
+			door.setBackground(Color.gray);
 			
 			s1.setFont(new Font("맑은고딕",Font.BOLD, 35));
 			s1.setForeground(Color.white);
@@ -827,11 +841,20 @@ class SeatFrame extends JFrame implements ActionListener{
 			s3.setForeground(Color.white);
 			s4.setFont(new Font("맑은고딕",Font.BOLD, 5));
 			s4.setForeground(Color.white);
+			s5.setFont(new Font("맑은고딕",Font.BOLD, 10));
+			s5.setForeground(Color.white);
+			s6.setFont(new Font("맑은고딕",Font.BOLD, 10));
+			s6.setForeground(Color.white);
 			
 			add(s1);
 			add(s2);
 			add(s3);
 			add(s4);
+			add(s5);
+			add(s6);
+			add(yb);
+			add(rb);
+			add(door);
 			//
 			seat1.setBackground(Color.orange);
 			seat1.setBounds(50,150,50,50);
@@ -1262,7 +1285,241 @@ class SeatFrame extends JFrame implements ActionListener{
 				}
 				
 				//여기서부터
-				
+				else if(input.equals("4")) {
+					seatstatus.seatData[4] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[4] = true;
+				}
+				else if(input.equals("5")) {
+					seatstatus.seatData[5] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[5] = true;
+				}
+				else if(input.equals("6")) {
+					seatstatus.seatData[6] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[6] = true;
+				}
+				else if(input.equals("7")) {
+					seatstatus.seatData[7] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[7] = true;
+				}
+				else if(input.equals("8")) {
+					seatstatus.seatData[8] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[8] = true;
+				}
+				else if(input.equals("9")) {
+					seatstatus.seatData[9] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[9] = true;
+				}
+				else if(input.equals("10")) {
+					seatstatus.seatData[10] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[10] = true;
+				}
+				else if(input.equals("11")) {
+					seatstatus.seatData[11] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[11] = true;
+				}
+				else if(input.equals("12")) {
+					seatstatus.seatData[12] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[12] = true;
+				}
+				else if(input.equals("13")) {
+					seatstatus.seatData[13] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[13] = true;
+				}
+				else if(input.equals("14")) {
+					seatstatus.seatData[14] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[14] = true;
+				}
+				else if(input.equals("15")) {
+					seatstatus.seatData[15] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[15] = true;
+				}
+				else if(input.equals("16")) {
+					seatstatus.seatData[16] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[16] = true;
+				}
+				else if(input.equals("17")) {
+					seatstatus.seatData[17] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[17] = true;
+				}
+				else if(input.equals("18")) {
+					seatstatus.seatData[18] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[18] = true;
+				}
+				else if(input.equals("19")) {
+					seatstatus.seatData[19] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[19] = true;
+				}
+				else if(input.equals("20")) {
+					seatstatus.seatData[20] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[20] = true;
+				}
+				else if(input.equals("21")) {
+					seatstatus.seatData[21] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[21] = true;
+				}
+				else if(input.equals("22")) {
+					seatstatus.seatData[22] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[22] = true;
+				}
+				else if(input.equals("23")) {
+					seatstatus.seatData[23] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[23] = true;
+				}
+				else if(input.equals("24")) {
+					seatstatus.seatData[24] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[24] = true;
+				}
+				else if(input.equals("25")) {
+					seatstatus.seatData[25] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[25] = true;
+				}
+				else if(input.equals("26")) {
+					seatstatus.seatData[26] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[26] = true;
+				}
+				else if(input.equals("27")) {
+					seatstatus.seatData[27] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[27] = true;
+				}
+				else if(input.equals("28")) {
+					seatstatus.seatData[28] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[28] = true;
+				}
+				else if(input.equals("29")) {
+					seatstatus.seatData[29] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[29] = true;
+				}
+				else if(input.equals("30")) {
+					seatstatus.seatData[30] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[30] = true;
+				}
+				else if(input.equals("31")) {
+					seatstatus.seatData[31] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[31] = true;
+				}
+				else if(input.equals("32")) {
+					seatstatus.seatData[32] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[32] = true;
+				}
+				else if(input.equals("33")) {
+					seatstatus.seatData[33] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[33] = true;
+				}
+				else if(input.equals("34")) {
+					seatstatus.seatData[34] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[34] = true;
+				}
+				else if(input.equals("35")) {
+					seatstatus.seatData[35] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[35] = true;
+				}
+				else if(input.equals("36")) {
+					seatstatus.seatData[36] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[36] = true;
+				}
+				else if(input.equals("37")) {
+					seatstatus.seatData[37] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[37] = true;
+				}
+				else if(input.equals("38")) {
+					seatstatus.seatData[38] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[38] = true;
+				}
+				else if(input.equals("39")) {
+					seatstatus.seatData[39] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[39] = true;
+				}
+				else if(input.equals("40")) {
+					seatstatus.seatData[40] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[40] = true;
+				}
+				else if(input.equals("41")) {
+					seatstatus.seatData[41] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[41] = true;
+				}
+				else if(input.equals("42")) {
+					seatstatus.seatData[42] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[42] = true;
+				}
+				else if(input.equals("43")) {
+					seatstatus.seatData[43] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[43] = true;
+				}
+				else if(input.equals("44")) {
+					seatstatus.seatData[44] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[44] = true;
+				}
+				else if(input.equals("45")) {
+					seatstatus.seatData[45] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[45] = true;
+				}
+				else if(input.equals("46")) {
+					seatstatus.seatData[46] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[46] = true;
+				}
+				else if(input.equals("47")) {
+					seatstatus.seatData[47] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[47] = true;
+				}
+				else if(input.equals("48")) {
+					seatstatus.seatData[48] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[48] = true;
+				}
+				else if(input.equals("49")) {
+					seatstatus.seatData[49] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[49] = true;
+				}
+				else if(input.equals("50")) {
+					seatstatus.seatData[50] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[50] = true;
+				}
 				//여기까지
 				
 				new FirstFrame();
@@ -1400,7 +1657,8 @@ class ChooseSeat extends JFrame implements ActionListener{
 			}
 			
 			if(order == 0) {
-				//고객 정보 확인이 안됨
+				this.setVisible(false);
+				new WarningFrame2();
 			}
 			else {
 				
@@ -1546,7 +1804,9 @@ class InFrame extends JFrame implements ActionListener{
 			}
 			
 			if(order == 0) {
-				//입실 중이지 않음 경고창 프레임
+				this.setVisible(false);
+				new WarningFrame1(0);
+				
 			}
 			else {
 				
@@ -1691,7 +1951,8 @@ class OutFrame extends JFrame implements ActionListener{
 			}
 			
 			if(order == 0) {
-				//입실 중이지 않음 경고창 프레임
+				this.setVisible(false);
+				new WarningFrame1(1);
 			}
 			else {
 				
@@ -2980,6 +3241,125 @@ class LockerFrame extends JFrame implements ActionListener{
 	
 }
 
+class WarningFrame1 extends JFrame implements ActionListener
+{
+	JLabel w1 = new JLabel("이용 중인 사용자가 아닙니다.");
+	JButton ok = new JButton("확인");
+	int typp;
+	WarningFrame1(int type)
+	{	
+		typp = type;
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+
+		w1.setBounds(100,230,450,50);
+		w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		w1.setForeground(Color.white);
+		ok.setBounds(250,350,100,50);
+		ok.setBackground(Color.orange);
+		ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		ok.addActionListener(this);
+		add(w1);
+		add(ok);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		
+		String input = e.getActionCommand();
+		if(input.equals("확인")) {
+			if(typp == 0) {
+				this.setVisible(false);
+				new FirstFrame();
+			}
+			else if(typp == 1) {
+				this.setVisible(false);
+				new FirstFrame();
+			}
+		}
+	}
+}
+
+class WarningFrame2 extends JFrame implements ActionListener
+{
+	JLabel w1 = new JLabel("정기권 이용자가 아닙니다.");
+	JButton ok = new JButton("확인");
+
+	WarningFrame2()
+	{
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+
+		w1.setBounds(100,230,450,50);
+		w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		w1.setForeground(Color.white);
+		ok.setBounds(250,350,100,50);
+		ok.setBackground(Color.orange);
+		ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
+		ok.addActionListener(this);
+
+		add(w1);
+		add(ok);
+		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		if(input.equals("확인"))
+		{
+			this.setVisible(false);
+			new FirstFrame();
+		}
+	}
+}
+
+class EnterFrame extends JFrame
+{
+	JLabel w1 = new JLabel("입실되었습니다.");
+	JButton ok = new JButton("확인");
+	EnterFrame()
+	{
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		w1.setBounds(180,230,450,50);
+		w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		w1.setForeground(Color.white);
+		ok.setBounds(250,350,100,50);
+		ok.setBackground(Color.orange);
+		ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
+
+		add(w1);
+		add(ok);
+	}
+}
+
+class LeaveFrame extends JFrame
+{
+	JLabel w1 = new JLabel("퇴실되었습니다.");
+	JButton ok = new JButton("확인");
+	LeaveFrame()
+	{
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+
+		w1.setBounds(180,230,450,50);
+		w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		w1.setForeground(Color.white);
+		ok.setBounds(250,350,100,50);
+		ok.setBackground(Color.orange);
+		ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
+
+		add(w1);
+		add(ok);
+	}
+}
 class chooselocker extends JFrame implements ActionListener{
 	
 	JPanel phonenum = new JPanel();
@@ -3155,20 +3535,23 @@ class afterIN extends JFrame implements ActionListener{
 		Okay.setBounds(250, 350, 100, 100);
 		Okay.setFont(new Font("맑은고딕",Font.BOLD, 30));
 		Okay.setBackground(Color.orange);
+		Okay.addActionListener(this);
 		info = new JLabel("입실 되었습니다!");
 		
 		info.setFont(new Font("맑은고딕",Font.BOLD, 40));
 		info.setBounds(150, 200, 500, 100);
 		info.setForeground(Color.white);
-		Okay.addActionListener(this);
 		
 		add(Okay);
 		add(info);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		this.setVisible(false);
-		//new FirstFrame();
+		String input = e.getActionCommand();
+		if(input.equals("확인")) {
+			this.setVisible(false);
+			new FirstFrame();
+		}
 	}
 }
 
@@ -3196,9 +3579,11 @@ class afterOUT extends JFrame implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		this.setVisible(false);
-		//new FirstFrame();
+		String input = e.getActionCommand();
+		if(input.equals("확인")) {
+			this.setVisible(false);
+			new FirstFrame();
+		}
 	}
 }
-
 
