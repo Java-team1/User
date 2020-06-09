@@ -45,22 +45,6 @@ class datauser{
 	int seatnumber;
 }
 
-class lockerstatus{
-	public static boolean[] lockers = new boolean[35];
-	public static int lockernum = 0;
-	public static lockerUser[] lockerData = new lockerUser[35];
-	public static lockerUser soon;
-}
-
-class lockerUser{
-	
-	String number = "";
-	String startdate;
-	String finishdate;
-	boolean usinglocker=false;
-	int lockernumber;
-}
-
 //첫번째 화면
 //당일권 구매+ 정기이용권 구매 + 입실/퇴실 + 기간자유석 자리선택 + 좌석 이동 + 사물함 대여 + 스터디룸 예약
 class FirstFrame extends JFrame{
@@ -804,13 +788,28 @@ class SeatFrame extends JFrame{
 			JLabel s2 = new JLabel("[이용현황: "+ Integer.toString(seatstatus.seatnum)+  "/50]");
 			JLabel s3 = new JLabel("원하는 좌석을 선택하세요.");
 			JLabel s4 = new JLabel("________________________________________________________");
+			JLabel s5 = new JLabel("이용 중 좌석");
+			JLabel s6 = new JLabel("사용 가능 좌석");
+			
+			
+			JButton yb = new JButton();
+			JButton rb = new JButton();
+			JButton door = new JButton("출입구");
+			
 			
 			s1.setBounds(200,30,250,50);
 			s2.setBounds(430,100,150,50);
 			s3.setBounds(185,90,350,30);
 			s4.setBounds(200,70,250,10);
+			s5.setBounds(450,80,150,20);
+			s6.setBounds(450,60,150,20);
 			
-			
+			yb.setBounds(430,65,10,10);
+			rb.setBounds(430,85,10,10);
+			yb.setBackground(Color.orange);
+			rb.setBackground(Color.red);
+			door.setBounds(100,550,150,50);
+			door.setBackground(Color.gray);
 			
 			s1.setFont(new Font("맑은고딕",Font.BOLD, 35));
 			s1.setForeground(Color.white);
@@ -820,11 +819,21 @@ class SeatFrame extends JFrame{
 			s3.setForeground(Color.white);
 			s4.setFont(new Font("맑은고딕",Font.BOLD, 5));
 			s4.setForeground(Color.white);
+			s5.setFont(new Font("맑은고딕",Font.BOLD, 10));
+			s5.setForeground(Color.white);
+			s6.setFont(new Font("맑은고딕",Font.BOLD, 10));
+			s6.setForeground(Color.white);
+			
 			
 			add(s1);
 			add(s2);
 			add(s3);
 			add(s4);
+			add(s5);
+			add(s6);
+			add(yb);
+			add(rb);
+			add(door);
 			//
 			seat1.setBackground(Color.orange);
 			seat1.setBounds(50,150,50,50);
@@ -1253,6 +1262,241 @@ class SeatFrame extends JFrame{
 				}
 				
 				//여기서부터
+				else if(input.equals("4")) {
+					seatstatus.seatData[4] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[4] = true;
+				}
+				else if(input.equals("5")) {
+					seatstatus.seatData[5] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[5] = true;
+				}
+				else if(input.equals("6")) {
+					seatstatus.seatData[6] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[6] = true;
+				}
+				else if(input.equals("7")) {
+					seatstatus.seatData[7] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[7] = true;
+				}
+				else if(input.equals("8")) {
+					seatstatus.seatData[8] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[8] = true;
+				}
+				else if(input.equals("9")) {
+					seatstatus.seatData[9] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[9] = true;
+				}
+				else if(input.equals("10")) {
+					seatstatus.seatData[10] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[10] = true;
+				}
+				else if(input.equals("11")) {
+					seatstatus.seatData[11] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[11] = true;
+				}
+				else if(input.equals("12")) {
+					seatstatus.seatData[12] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[12] = true;
+				}
+				else if(input.equals("13")) {
+					seatstatus.seatData[13] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[13] = true;
+				}
+				else if(input.equals("14")) {
+					seatstatus.seatData[14] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[14] = true;
+				}
+				else if(input.equals("15")) {
+					seatstatus.seatData[15] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[15] = true;
+				}
+				else if(input.equals("16")) {
+					seatstatus.seatData[16] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[16] = true;
+				}
+				else if(input.equals("17")) {
+					seatstatus.seatData[17] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[17] = true;
+				}
+				else if(input.equals("18")) {
+					seatstatus.seatData[18] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[18] = true;
+				}
+				else if(input.equals("19")) {
+					seatstatus.seatData[19] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[19] = true;
+				}
+				else if(input.equals("20")) {
+					seatstatus.seatData[20] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[20] = true;
+				}
+				else if(input.equals("21")) {
+					seatstatus.seatData[21] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[21] = true;
+				}
+				else if(input.equals("22")) {
+					seatstatus.seatData[22] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[22] = true;
+				}
+				else if(input.equals("23")) {
+					seatstatus.seatData[23] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[23] = true;
+				}
+				else if(input.equals("24")) {
+					seatstatus.seatData[24] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[24] = true;
+				}
+				else if(input.equals("25")) {
+					seatstatus.seatData[25] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[25] = true;
+				}
+				else if(input.equals("26")) {
+					seatstatus.seatData[26] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[26] = true;
+				}
+				else if(input.equals("27")) {
+					seatstatus.seatData[27] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[27] = true;
+				}
+				else if(input.equals("28")) {
+					seatstatus.seatData[28] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[28] = true;
+				}
+				else if(input.equals("29")) {
+					seatstatus.seatData[29] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[29] = true;
+				}
+				else if(input.equals("30")) {
+					seatstatus.seatData[30] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[30] = true;
+				}
+				else if(input.equals("31")) {
+					seatstatus.seatData[31] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[31] = true;
+				}
+				else if(input.equals("32")) {
+					seatstatus.seatData[32] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[32] = true;
+				}
+				else if(input.equals("33")) {
+					seatstatus.seatData[33] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[33] = true;
+				}
+				else if(input.equals("34")) {
+					seatstatus.seatData[34] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[34] = true;
+				}
+				else if(input.equals("35")) {
+					seatstatus.seatData[35] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[35] = true;
+				}
+				else if(input.equals("36")) {
+					seatstatus.seatData[36] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[36] = true;
+				}
+				else if(input.equals("37")) {
+					seatstatus.seatData[37] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[37] = true;
+				}
+				else if(input.equals("38")) {
+					seatstatus.seatData[38] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[38] = true;
+				}
+				else if(input.equals("39")) {
+					seatstatus.seatData[39] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[39] = true;
+				}
+				else if(input.equals("40")) {
+					seatstatus.seatData[40] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[40] = true;
+				}
+				else if(input.equals("41")) {
+					seatstatus.seatData[41] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[41] = true;
+				}
+				else if(input.equals("42")) {
+					seatstatus.seatData[42] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[42] = true;
+				}
+				else if(input.equals("43")) {
+					seatstatus.seatData[43] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[43] = true;
+				}
+				else if(input.equals("44")) {
+					seatstatus.seatData[44] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[44] = true;
+				}
+				else if(input.equals("45")) {
+					seatstatus.seatData[45] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[45] = true;
+				}
+				else if(input.equals("46")) {
+					seatstatus.seatData[46] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[46] = true;
+				}
+				else if(input.equals("47")) {
+					seatstatus.seatData[47] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[47] = true;
+				}
+				else if(input.equals("48")) {
+					seatstatus.seatData[48] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[48] = true;
+				}
+				else if(input.equals("49")) {
+					seatstatus.seatData[49] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[49] = true;
+				}
+				else if(input.equals("50")) {
+					seatstatus.seatData[50] = seatstatus.soon;
+					seatstatus.seatnum++;
+					seatstatus.seats[50] = true;
+				}
 				
 				//여기까지
 				
@@ -2453,7 +2697,6 @@ class PayFrame extends JFrame implements ActionListener{
 }
 //사물함 선택+홈버튼 기능
 class LockerFrame extends JFrame{
-	int lockernum;
 	
 	JButton homeButton = new JButton("홈으로");
 	JLabel info = new JLabel("사물함 예약");
@@ -2462,7 +2705,7 @@ class LockerFrame extends JFrame{
 			
 		}
 	};
-	JLabel total = new JLabel("[이용현황: "+Integer.toString(lockerstatus.lockernum)+"/35]");
+	JLabel total = new JLabel("/35");
 	
 	JButton Locker1 = new JButton("1");
 	JButton Locker2 = new JButton("2");
@@ -2500,13 +2743,11 @@ class LockerFrame extends JFrame{
 	JButton Locker34 = new JButton("34");
 	JButton Locker35 = new JButton("35");
 	
-	
 	public LockerFrame() {
 		getContentPane().setBackground(Color.DARK_GRAY);
 		setVisible(true);
 		setSize(600,650);
 		setLayout(null);
-		int lockernumber;
 		
 		homeButton.setBackground(Color.orange); //홈버튼 색깔 현재는 오렌지
 		homeButton.setBounds(55,50,70,40);
@@ -2519,8 +2760,8 @@ class LockerFrame extends JFrame{
 		info.setForeground(Color.white); 
 		add(info);
 		
-		total.setFont(new Font("맑은고딕",Font.BOLD, 15));
-		total.setBounds(430,135,150,50);
+		total.setFont(new Font("맑은고딕",Font.BOLD, 25));
+		total.setBounds(495,135,50,50);
 		total.setForeground(Color.white); 
 		add(total);
 		
@@ -2533,532 +2774,276 @@ class LockerFrame extends JFrame{
 		Locker1.setBackground(Color.orange);
 		Locker1.setBounds(55,220,70,70);
 		Locker1.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[1]) {
-			Locker1.setBackground(Color.RED);
-		}
-		Locker1.addActionListener(new eHandler());
 		add(Locker1);
 		
 		Locker2.setBackground(Color.orange);
 		Locker2.setBounds(125,220,70,70);
 		Locker2.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[2]) {
-			Locker2.setBackground(Color.RED);
-		}
-		Locker2.addActionListener(new eHandler());
 		add(Locker2);
 	
 		Locker3.setBackground(Color.orange);
 		Locker3.setBounds(195,220,70,70);
 		Locker3.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[3]) {
-			Locker3.setBackground(Color.RED);
-		}
-		Locker3.addActionListener(new eHandler());
-		
 		add(Locker3);
 	
 		Locker4.setBackground(Color.orange);
 		Locker4.setBounds(265,220,70,70);
 		Locker4.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[4]) {
-			Locker4.setBackground(Color.RED);
-		}
-		Locker4.addActionListener(new eHandler());
-		
 		add(Locker4);
 	
 		Locker5.setBackground(Color.orange);
 		Locker5.setBounds(335,220,70,70);
 		Locker5.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[5]) {
-			Locker5.setBackground(Color.RED);
-		}
-		Locker5.addActionListener(new eHandler());
-		
 		add(Locker5);
 	
 		Locker6.setBackground(Color.orange);
 		Locker6.setBounds(405,220,70,70);
 		Locker6.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[6]) {
-			Locker6.setBackground(Color.RED);
-		}
-		Locker6.addActionListener(new eHandler());
-		
 		add(Locker6);
 	
 		Locker7.setBackground(Color.orange);
 		Locker7.setBounds(475,220,70,70);
 		Locker7.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[7]) {
-			Locker7.setBackground(Color.RED);
-		}
-		Locker7.addActionListener(new eHandler());
-		
 		add(Locker7);
 	
 		Locker8.setBackground(Color.orange);
 		Locker8.setBounds(55,290,70,70);
 		Locker8.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[8]) {
-			Locker8.setBackground(Color.RED);
-		}
-		Locker8.addActionListener(new eHandler());
-		
 		add(Locker8);
 	
 		Locker9.setBackground(Color.orange);
 		Locker9.setBounds(125,290,70,70);
 		Locker9.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[9]) {
-			Locker9.setBackground(Color.RED);
-		}
-		Locker9.addActionListener(new eHandler());
-		
 		add(Locker9);
 		
 		Locker10.setBackground(Color.orange);
 		Locker10.setBounds(195,290,70,70);
 		Locker10.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[10]) {
-			Locker10.setBackground(Color.RED);
-		}
-		Locker10.addActionListener(new eHandler());
-		
 		add(Locker10);
 
 		Locker11.setBackground(Color.orange);
 		Locker11.setBounds(265,290,70,70);
 		Locker11.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[11]) {
-			Locker11.setBackground(Color.RED);
-		}
-		Locker11.addActionListener(new eHandler());
-		
 		add(Locker11);
 	
 		Locker12.setBackground(Color.orange);
 		Locker12.setBounds(335,290,70,70);
 		Locker12.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[12]) {
-			Locker12.setBackground(Color.RED);
-		}
-		Locker12.addActionListener(new eHandler());
-		
 		add(Locker12);
 	
 		Locker13.setBackground(Color.orange);
 		Locker13.setBounds(405,290,70,70);
 		Locker13.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[13]) {
-			Locker13.setBackground(Color.RED);
-		}
-		Locker13.addActionListener(new eHandler());
-		
 		add(Locker13);
 	
 		Locker14.setBackground(Color.orange);
 		Locker14.setBounds(475,290,70,70);
 		Locker14.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[14]) {
-			Locker14.setBackground(Color.RED);
-		}
-		Locker14.addActionListener(new eHandler());
-		
 		add(Locker14);
 	
 		Locker15.setBackground(Color.orange);
 		Locker15.setBounds(55,360,70,70);
 		Locker15.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[15]) {
-			Locker15.setBackground(Color.RED);
-		}
-		Locker15.addActionListener(new eHandler());
-		
 		add(Locker15);
 	
 		Locker16.setBackground(Color.orange);
 		Locker16.setBounds(125,360,70,70);
 		Locker16.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[16]) {
-			Locker16.setBackground(Color.RED);
-		}
-		Locker16.addActionListener(new eHandler());
-		
 		add(Locker16);
 	
 		Locker17.setBackground(Color.orange);
 		Locker17.setBounds(195,360,70,70);
 		Locker17.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[17]) {
-			Locker17.setBackground(Color.RED);
-		}
-		Locker17.addActionListener(new eHandler());
-		
 		add(Locker17);
 	
 		Locker18.setBackground(Color.orange);
 		Locker18.setBounds(265,360,70,70);
 		Locker18.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[18]) {
-			Locker18.setBackground(Color.RED);
-		}
-		Locker18.addActionListener(new eHandler());
-		
 		add(Locker18);
 	
 		Locker19.setBackground(Color.orange);
 		Locker19.setBounds(335,360,70,70);
 		Locker19.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[19]) {
-			Locker19.setBackground(Color.RED);
-		}
-		Locker19.addActionListener(new eHandler());
-		
 		add(Locker19);
 	
 		Locker20.setBackground(Color.orange);
 		Locker20.setBounds(405,360,70,70);
 		Locker20.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[20]) {
-			Locker20.setBackground(Color.RED);
-		}
-		Locker20.addActionListener(new eHandler());
-		
 		add(Locker20);
 	
 		Locker21.setBackground(Color.orange);
 		Locker21.setBounds(475,360,70,70);
 		Locker21.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[21]) {
-			Locker21.setBackground(Color.RED);
-		}
-		Locker21.addActionListener(new eHandler());
-		
 		add(Locker21);
 		
 		Locker22.setBackground(Color.orange);
 		Locker22.setBounds(55,430,70,70);
 		Locker22.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[22]) {
-			Locker22.setBackground(Color.RED);
-		}
-		Locker22.addActionListener(new eHandler());
-		
 		add(Locker22);
 
 		Locker23.setBackground(Color.orange);
 		Locker23.setBounds(125,430,70,70);
 		Locker23.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[23]) {
-			Locker23.setBackground(Color.RED);
-		}
-		Locker23.addActionListener(new eHandler());
-		
 		add(Locker23);
 
 		Locker24.setBackground(Color.orange);
 		Locker24.setBounds(195,430,70,70);
 		Locker24.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[24]) {
-			Locker24.setBackground(Color.RED);
-		}
-		Locker24.addActionListener(new eHandler());
-		
 		add(Locker24);
 		
 		Locker25.setBackground(Color.orange);
 		Locker25.setBounds(265,430,70,70);
 		Locker25.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[25]) {
-			Locker25.setBackground(Color.RED);
-		}
-		Locker25.addActionListener(new eHandler());
-		
 		add(Locker25);
 		
 		Locker26.setBackground(Color.orange);
 		Locker26.setBounds(335,430,70,70);
 		Locker26.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[26]) {
-			Locker26.setBackground(Color.RED);
-		}
-		Locker26.addActionListener(new eHandler());
-		
 		add(Locker26);
 		
 		Locker27.setBackground(Color.orange);
 		Locker27.setBounds(405,430,70,70);
 		Locker27.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[27]) {
-			Locker27.setBackground(Color.RED);
-		}
-		Locker27.addActionListener(new eHandler());
-		
 		add(Locker27);
 		
 		Locker28.setBackground(Color.orange);
 		Locker28.setBounds(475,430,70,70);
 		Locker28.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[28]) {
-			Locker28.setBackground(Color.RED);
-		}
-		Locker28.addActionListener(new eHandler());
-		
 		add(Locker28);
 		
 		Locker29.setBackground(Color.orange);
 		Locker29.setBounds(55,500,70,70);
 		Locker29.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[29]) {
-			Locker29.setBackground(Color.RED);
-		}
-		Locker29.addActionListener(new eHandler());
-		
 		add(Locker29);
 		
 		Locker30.setBackground(Color.orange);
 		Locker30.setBounds(125,500,70,70);
 		Locker30.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[30]) {
-			Locker30.setBackground(Color.RED);
-		}
-		Locker30.addActionListener(new eHandler());
-		
 		add(Locker30);
 		
 		Locker31.setBackground(Color.orange);
 		Locker31.setBounds(195,500,70,70);
 		Locker31.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[31]) {
-			Locker31.setBackground(Color.RED);
-		}
-		Locker31.addActionListener(new eHandler());
-		
 		add(Locker31);
 		
 		Locker32.setBackground(Color.orange);
 		Locker32.setBounds(265,500,70,70);
 		Locker32.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[32]) {
-			Locker32.setBackground(Color.RED);
-		}
-		Locker32.addActionListener(new eHandler());
-		
 		add(Locker32);
 		
 		Locker33.setBackground(Color.orange);
 		Locker33.setBounds(335,500,70,70);
 		Locker33.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[33]) {
-			Locker33.setBackground(Color.RED);
-		}
-		Locker33.addActionListener(new eHandler());
-		
 		add(Locker33);
 		
 		Locker34.setBackground(Color.orange);
 		Locker34.setBounds(405,500,70,70);
 		Locker34.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[34]) {
-			Locker34.setBackground(Color.RED);
-		}
-		Locker34.addActionListener(new eHandler());
-		
 		add(Locker34);
 		
 		Locker35.setBackground(Color.orange);
 		Locker35.setBounds(475,500,70,70);
 		Locker35.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		if(lockerstatus.lockers[35]) {
-			Locker35.setBackground(Color.RED);
-		}
-		Locker35.addActionListener(new eHandler());
-		
 		add(Locker35);
 		
 		
-		
 	}
-	
-	//전화번호 입력 창 띄우기
-	class eHandler implements ActionListener{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			new chooselocker(Integer.parseInt(e.getActionCommand()));
+}
+//경고창1	
+	class WarningFrame1 extends JFrame
+	{
+		JLabel w1 = new JLabel("이용 중인 사용자가 아닙니다.");
+		JButton ok = new JButton("확인");
+		
+		WarningFrame1()
+		{
+			getContentPane().setBackground(Color.DARK_GRAY);
+			setVisible(true);
+			setSize(600,650);
+			setLayout(null);
 			
-		}
-		
-	}
-	
-	
-}
-
-class chooselocker extends JFrame implements ActionListener{
-	
-	JPanel phonenum = new JPanel();
-	JButton num0 = new JButton("0");
-	JButton num1 = new JButton("1");
-	JButton num2 = new JButton("2");
-	JButton num3 = new JButton("3");
-	JButton num4 = new JButton("4");
-	JButton num5 = new JButton("5");
-	JButton num6 = new JButton("6");
-	JButton num7 = new JButton("7");
-	JButton num8 = new JButton("8");
-	JButton num9 = new JButton("9");
-	JButton Pay = new JButton("확인");
-	
-	
-	JButton Del = new JButton("<-");
-	JTextField number = new JTextField();
-	int lnum;
-	
-	chooselocker(int lockernum){
-		getContentPane().setBackground(Color.DARK_GRAY);
-		setVisible(true);
-		setSize(600,650);
-		setLayout(null);
-		phonenum.setLayout(new GridLayout(4,3));
-		this.lnum=lockernum;
-		
-		num1.addActionListener(this);
-		num2.addActionListener(this);
-		num3.addActionListener(this);
-		num4.addActionListener(this);
-		num5.addActionListener(this);
-		num6.addActionListener(this);
-		num7.addActionListener(this);
-		num8.addActionListener(this);
-		num9.addActionListener(this);
-		num0.addActionListener(this);
-		Pay.addActionListener(this);
-		
-		phonenum.add(num1);
-		phonenum.add(num2);
-		phonenum.add(num3);
-		phonenum.add(num4);
-		phonenum.add(num5);
-		phonenum.add(num6);
-		phonenum.add(num7);
-		phonenum.add(num8);
-		phonenum.add(num9);
-		phonenum.add(num0);
-		phonenum.add(Del);
-		phonenum.add(Pay);
-		phonenum.setBounds(50,150,450,350);
-		number.setBounds(50,50,450,50);
-		add(phonenum);
-		number.setBackground(Color.white);
-		number.setForeground(Color.black);
-		number.setFont(new Font("맑은고딕",Font.BOLD, 20));
-		add(number);
-		
-	}
-	
-	public void actionPerformed(ActionEvent e) {
-		String input = e.getActionCommand();
-		String temp = number.getText();
-		
-		
-		if(input.equals("0")) {
-			temp += "0";
-			number.setText(temp);
-		}
-		else if(input.equals("1")) {
-			temp += "1";
-			number.setText(temp);
-		}
-		else if(input.equals("2")) {
-			temp += "2";
-			number.setText(temp);
-		}
-		else if(input.equals("3")) {
-			temp += "3";
-			number.setText(temp);
-		}
-		else if(input.equals("4")) {
-			temp += "4";
-			number.setText(temp);
-		}
-		else if(input.equals("5")) {
-			temp += "5";
-			number.setText(temp);
-		}
-		else if(input.equals("6")) {
-			temp += "6";
-			number.setText(temp);
-		}
-		else if(input.equals("7")) {
-			temp += "7";
-			number.setText(temp);
-		}
-		else if(input.equals("8")) {
-			temp += "8";
-			number.setText(temp);
-		}
-		else if(input.equals("9")) {
-			temp += "9";
-			number.setText(temp);
-		}
-		else if(input.equals("<-")) {
-			temp = temp.substring(0,temp.length()-1);
-			number.setText(temp);
-		}
-		else if(input.equals("확인")){
-		
-				//사물함 이용자 정보 저장, 결제 완료 창 띄우기
-				lockerstatus.lockers[lnum]=true;
-				lockerstatus.lockernum++;
-		
-				lockerUser adduser=new lockerUser();
-				adduser.number=number.getText();
-				adduser.usinglocker=true;
-				
-				
-				/////사물함 날짜 저장 하기
-				
-				
-				lockerstatus.lockerData[lnum]=adduser;
-				this.setVisible(false);
-				new lockerPay(lnum);
+			w1.setBounds(100,230,450,50);
+			w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+			w1.setForeground(Color.white);
+			ok.setBounds(250,350,100,50);
+			ok.setBackground(Color.orange);
+			ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
 			
-				
-		}		
-	}
-}
-
-class lockerPay extends JFrame implements ActionListener{
-	JLabel info;
-	JButton Okay;
-	lockerPay(int lnum){
-		getContentPane().setBackground(Color.DARK_GRAY);
-		setVisible(true);
-		setSize(600,650);
-		setLayout(null);
-		Okay = new JButton("확인");
-		Okay.setBounds(250, 350, 100, 100);
-		Okay.setFont(new Font("맑은고딕",Font.BOLD, 30));
-		Okay.setBackground(Color.orange);
-		info = new JLabel(lnum+"번 사물함 결제되었습니다!");
-		
-		info.setFont(new Font("맑은고딕",Font.BOLD, 40));
-		info.setBounds(60, 200, 500, 100);
-		info.setForeground(Color.white);
-		Okay.addActionListener(this);
-		
-		add(Okay);
-		add(info);
+			add(w1);
+			add(ok);
+		}
 	}
 	
-	public void actionPerformed(ActionEvent e) {
-		this.setVisible(false);
-		new FirstFrame();
+//경고창2	
+	class WarningFrame2 extends JFrame
+	{
+		JLabel w1 = new JLabel("정기권 이용자가 아닙니다.");
+		JButton ok = new JButton("확인");
+		
+		WarningFrame2()
+		{
+			getContentPane().setBackground(Color.DARK_GRAY);
+			setVisible(true);
+			setSize(600,650);
+			setLayout(null);
+			
+			w1.setBounds(100,230,450,50);
+			w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+			w1.setForeground(Color.white);
+			ok.setBounds(250,350,100,50);
+			ok.setBackground(Color.orange);
+			ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
+			
+			add(w1);
+			add(ok);
+		}
 	}
-}
-
-
-
+	
+	class EnterFrame extends JFrame
+	{
+		JLabel w1 = new JLabel("입실되었습니다.");
+		JButton ok = new JButton("확인");
+		
+		EnterFrame()
+		{
+			getContentPane().setBackground(Color.DARK_GRAY);
+			setVisible(true);
+			setSize(600,650);
+			setLayout(null);
+			
+			w1.setBounds(180,230,450,50);
+			w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+			w1.setForeground(Color.white);
+			ok.setBounds(250,350,100,50);
+			ok.setBackground(Color.orange);
+			ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
+			
+			add(w1);
+			add(ok);
+		}
+	}
+	
+	class LeaveFrame extends JFrame
+	{
+		JLabel w1 = new JLabel("퇴실되었습니다.");
+		JButton ok = new JButton("확인");
+		
+		LeaveFrame()
+		{
+			getContentPane().setBackground(Color.DARK_GRAY);
+			setVisible(true);
+			setSize(600,650);
+			setLayout(null);
+			
+			w1.setBounds(180,230,450,50);
+			w1.setFont(new Font("맑은고딕",Font.BOLD, 30));
+			w1.setForeground(Color.white);
+			ok.setBounds(250,350,100,50);
+			ok.setBackground(Color.orange);
+			ok.setFont(new Font("맑은고딕",Font.BOLD, 20));
+			
+			add(w1);
+			add(ok);
+		}
+	}
+	
