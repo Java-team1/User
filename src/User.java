@@ -26,7 +26,7 @@ public class User {
 
 class UserData{
 	public static datauser[] Data = new datauser[200];
-	public static int num= 1;
+	public static int num= 0;
 }
 
 class seatstatus{
@@ -39,8 +39,8 @@ class seatstatus{
 class datauser{
 	
 	String number = "";
-	String starttime;
-	String finishtime;
+	String starttime = "";
+	String finishtime ="";
 	boolean nowseat = false;
 	int seatnumber;
 }
@@ -95,6 +95,7 @@ class FirstFrame extends JFrame{
 	JButton Button4 = new JButton("퇴실");
 	JButton Button5 = new JButton(b5);
 	JButton Button6 = new JButton("사물함 대여");
+	JButton Manager = new JButton("관리자");
 	//JButton Button7 = new JButton("스터디룸 예약");
 	//JButton Button8 = new JButton("좌석이동");
 	//
@@ -200,6 +201,12 @@ class FirstFrame extends JFrame{
 		com10.setForeground(Color.red);
 		add(com10);
 		
+		
+		Manager.setBounds(500, 30, 60, 60);
+		Manager.setFont(new Font("HY견고딕",Font.PLAIN, 8));
+		Manager.addActionListener(new EventManage());
+		Manager.setBackground(Color.red);
+		add(Manager);
 		/*com10.setBounds(60,585,200,10);
 		com10.setFont(new Font("HY견고딕",Font.PLAIN, 12));
 		com10.setForeground(Color.red);
@@ -265,6 +272,11 @@ class EventOut implements ActionListener{
 	}
 }
 
+class EventManage implements ActionListener{
+	public void actionPerformed(ActionEvent e) {
+		new ManageFrame();
+	}
+}
 
 //좌석 선택 + 홈버튼 기능 추가
 class SeatFrame extends JFrame implements ActionListener{
@@ -2485,7 +2497,6 @@ class BuyFrame2 extends JFrame implements ActionListener{
 			customer.finishtime = simpleDateFormat.format(cal.getTime());
 			
 			UserData.Data[UserData.num++] = customer;
-			
 			new PayFrame(typee);
 		}
 			
@@ -2748,6 +2759,7 @@ class InsertNumber extends JFrame implements ActionListener{
 			String pattern = "MM월 dd일 HH:mm:ss";
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 			String date = simpleDateFormat.format(new Date());
+			cal.add(Calendar.DATE, 30);
 			adduser.starttime = date;
 			adduser.finishtime = simpleDateFormat.format(cal.getTime()); 
 			
@@ -3534,6 +3546,7 @@ class chooselocker extends JFrame implements ActionListener{
 		num9.addActionListener(this);
 		num0.addActionListener(this);
 		Pay.addActionListener(this);
+		Del.addActionListener(this);
 		
 		num0.setBackground(Color.orange);
 		num1.setBackground(Color.orange);
@@ -3646,8 +3659,16 @@ class chooselocker extends JFrame implements ActionListener{
 				adduser.number=number.getText();
 				adduser.usinglocker=true;
 				
+				Date date1 = new Date();
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(date1);
+				String pattern = "MM월 dd일 HH:mm:ss";
+				SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+				String date = simpleDateFormat.format(new Date());
+				adduser.startdate = date;
+				adduser.finishdate = simpleDateFormat.format(cal.getTime()); 
 				
-				/////사물함 날짜 저장 하기
+				
 				
 				
 				lockerstatus.lockerData[lnum]=adduser;
@@ -3779,9 +3800,228 @@ class afterOUT extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		String input = e.getActionCommand();
 		if(input.equals("확인")) {
+			seatstatus.seatnum--;
 			this.setVisible(false);
 			new FirstFrame();
 		}
 	}
 }
 
+
+class ManageFrame extends JFrame implements ActionListener{
+	JButton Regular  = new JButton("정기권 이용자");
+	JButton Seat  = new JButton("좌석 현황");
+	JButton Locker  = new JButton("사물함");
+	JButton home = new JButton("홈으로");
+	
+	ManageFrame(){
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		
+		Regular.setBounds(90, 200, 120, 120);
+		Regular.addActionListener(this);
+		add(Regular);
+		
+		Seat.setBounds(230, 200, 120, 120);
+		Seat.addActionListener(this);
+		add(Seat);
+		
+		Locker.setBounds(370, 200, 120, 120);
+		Locker.addActionListener(this);
+		add(Locker);
+		
+		home.setBounds(470, 500, 70, 70);
+		home.addActionListener(this);
+		add(home);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		if(input.equals("정기권 이용자")) {
+			this.setVisible(false);
+			new RegularUserFrame();
+		}
+		else if(input.equals("좌석 현황")) {
+			this.setVisible(false);
+			new SeatStat();
+		}
+		else if(input.equals("홈으로")) {
+			this.setVisible(false);
+			new FirstFrame();
+		}
+		else if(input.equals("사물함")) {
+			this.setVisible(false);
+			new Lockerstat();
+		}
+	}
+}
+
+class RegularUserFrame extends JFrame implements ActionListener{
+	JLabel[] foruser = new JLabel[100];
+	JLabel aaa;
+	JLabel aaa1;
+	JButton back = new JButton("돌아가기");
+	int y = 160;
+	
+	RegularUserFrame(){
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		
+		aaa = new JLabel("정기권 이용자");
+		aaa.setFont(new Font("맑은 고딕",Font.BOLD, 30));
+		aaa.setBounds(180, 10, 400, 100);
+		aaa.setForeground(Color.white);
+		
+		aaa1 = new JLabel("번호  전화번호             시작시간                   종료시간");
+		aaa1.setFont(new Font("맑은 고딕",Font.BOLD, 15));
+		aaa1.setBounds(30, 130, 500, 40);
+		aaa1.setForeground(Color.white);
+		
+		add(aaa);
+		add(aaa1);
+		
+		for(int i = 0; i < UserData.num; i++) {
+			foruser[i] = new JLabel();
+			String info = Integer.toString(i) + "      " + "010" + UserData.Data[i].number + "     " + UserData.Data[i].starttime + "    " + UserData.Data[i].finishtime;
+			foruser[i].setText(info);
+			foruser[i].setFont(new Font("맑은 고딕",Font.BOLD, 15));
+			foruser[i].setForeground(Color.white);
+			foruser[i].setBounds(30, y, 500, 20);
+			add(foruser[i]);
+			y += 25;
+		}
+		
+		back.setFont(new Font("맑은 고딕",Font.BOLD, 10));
+		back.setBounds(500, 500, 80, 80);
+		back.setBackground(Color.pink);
+		back.addActionListener(this);
+		add(back);
+		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		if(input.equals("돌아가기")) {
+			this.setVisible(false);
+			new ManageFrame();
+		}
+	}
+}
+
+class SeatStat extends JFrame implements ActionListener{
+	JButton back = new JButton("돌아가기");
+	JLabel[] forseat = new JLabel[51];
+	JLabel aaa;
+	JLabel aaa1;
+	int y = 160;
+	
+	SeatStat(){
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		
+		
+		aaa = new JLabel("좌석 현황");
+		aaa.setFont(new Font("맑은 고딕",Font.BOLD, 30));
+		aaa.setBounds(180, 10, 400, 100);
+		aaa.setForeground(Color.white);
+		
+		aaa1 = new JLabel("번호  전화번호             시작시간                   종료시간");
+		aaa1.setFont(new Font("맑은 고딕",Font.BOLD, 15));
+		aaa1.setBounds(30, 130, 500, 40);
+		aaa1.setForeground(Color.white);
+		
+		add(aaa);
+		add(aaa1);
+		
+		for(int i = 1; i < 51; i++) {
+			if(seatstatus.seats[i]) {
+				
+				forseat[i] = new JLabel();
+				String info = Integer.toString(i) + "      " + "010" + seatstatus.seatData[i].number + "     " + seatstatus.seatData[i].starttime + "    " + seatstatus.seatData[i].finishtime;
+				forseat[i].setText(info);
+				forseat[i].setFont(new Font("맑은 고딕",Font.BOLD, 15));
+				forseat[i].setForeground(Color.white);
+				forseat[i].setBounds(30, y, 500, 20);
+				add(forseat[i]);
+				y += 25;
+			}
+		}
+		back.setFont(new Font("맑은 고딕",Font.BOLD, 10));
+		back.setBounds(500, 500, 80, 80);
+		back.setBackground(Color.pink);
+		back.addActionListener(this);
+		add(back);
+		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		if(input.equals("돌아가기")) {
+			this.setVisible(false);
+			new ManageFrame();
+		}
+	}
+}
+
+
+class Lockerstat extends JFrame implements ActionListener{
+	JButton back = new JButton("돌아가기");
+	JLabel[] forlocker = new JLabel[100];
+	JLabel aaa;
+	JLabel aaa1;
+	int y = 160;
+	
+	Lockerstat(){
+		getContentPane().setBackground(Color.DARK_GRAY);
+		setVisible(true);
+		setSize(600,650);
+		setLayout(null);
+		
+		
+		aaa = new JLabel("사물함 현황");
+		aaa.setFont(new Font("맑은 고딕",Font.BOLD, 30));
+		aaa.setBounds(180, 10, 400, 100);
+		aaa.setForeground(Color.white);
+		
+		aaa1 = new JLabel("번호  전화번호               시작시간                   종료시간");
+		aaa1.setFont(new Font("맑은 고딕",Font.BOLD, 15));
+		aaa1.setBounds(30, 130, 500, 40);
+		aaa1.setForeground(Color.white);
+		
+		add(aaa);
+		add(aaa1);
+		
+		for(int i = 1; i < 36; i++) {
+			if(lockerstatus.lockers[i]) {
+				forlocker[i] = new JLabel(); 
+				String info = Integer.toString(i) + "      " + "010" + lockerstatus.lockerData[i].number+ "     " + lockerstatus.lockerData[i].startdate + "    " + lockerstatus.lockerData[i].finishdate;
+				forlocker[i].setText(info);
+				forlocker[i].setFont(new Font("맑은 고딕",Font.BOLD, 15));
+				forlocker[i].setForeground(Color.white);
+				forlocker[i].setBounds(30, y, 500, 20);
+				add(forlocker[i]);
+				y += 25;
+			}
+		}
+		back.setFont(new Font("맑은 고딕",Font.BOLD, 10));
+		back.setBounds(500, 500, 80, 80);
+		back.setBackground(Color.pink);
+		back.addActionListener(this);
+		add(back);
+		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String input = e.getActionCommand();
+		if(input.equals("돌아가기")) {
+			this.setVisible(false);
+			new ManageFrame();
+		}
+	}
+}
