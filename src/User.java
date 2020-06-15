@@ -47,7 +47,7 @@ class datauser{
 
 class lockerstatus{
 	public static boolean[] lockers = new boolean[36];
-	public static int lockernum = 1;
+	public static int lockernum = 0;
 	public static lockerUser[] lockerData = new lockerUser[36];
 	public static lockerUser soon;
 }
@@ -88,6 +88,12 @@ class FirstFrame extends JFrame{
 	JLabel com8 = new JLabel("문의사항 : 010-1234-5678");
 	JLabel com9 = new JLabel("*스터디룸 1회 이용시 시간권 구매 이용");
 	JLabel com10 = new JLabel("*장기이용시 정기권 구매 이용");
+	//
+	JLabel logo1 = new JLabel("____________________");
+	JLabel logo2 = new JLabel("成均館");
+	JLabel logo3 = new JLabel("스터디카페");
+	JLabel logo4 = new JLabel("Sungkyunkwan StudyCafe");
+	JLabel logo5 = new JLabel("_______________________________");
 	//
 	JButton Button1 = new JButton("당일권 구매");
 	JButton Button2 = new JButton(b2);
@@ -201,11 +207,35 @@ class FirstFrame extends JFrame{
 		com10.setForeground(Color.red);
 		add(com10);
 		
+		logo1.setBounds(215,105,400,20);
+		logo1.setFont(new Font("HY견고딕",Font.PLAIN, 15));
+		logo1.setForeground(Color.orange);
+		add(logo1);
 		
-		Manager.setBounds(500, 30, 60, 60);
-		Manager.setFont(new Font("HY견고딕",Font.PLAIN, 8));
+		logo2.setBounds(210,130,200,50);
+		logo2.setFont(new Font("HY견고딕",Font.PLAIN, 50));
+		logo2.setForeground(Color.orange);
+		add(logo2);
+		
+		logo3.setBounds(190,180,200,40);
+		logo3.setFont(new Font("HY견고딕",Font.PLAIN, 40));
+		logo3.setForeground(Color.orange);
+		add(logo3);
+		
+		logo4.setBounds(180,220,300,24);
+		logo4.setFont(new Font("맑은 고딕",Font.ITALIC, 18));
+		logo4.setForeground(Color.orange);
+		add(logo4);
+		
+		logo5.setBounds(175,240,500,20);
+		logo5.setFont(new Font("HY견고딕",Font.PLAIN, 15));
+		logo5.setForeground(Color.orange);
+		add(logo5);
+		
+		Manager.setBounds(456, 50, 100, 30);
+		Manager.setFont(new Font("HY견고딕",Font.PLAIN, 15));
 		Manager.addActionListener(new EventManage());
-		Manager.setBackground(Color.red);
+		Manager.setBackground(Color.LIGHT_GRAY);
 		add(Manager);
 		/*com10.setBounds(60,585,200,10);
 		com10.setFont(new Font("HY견고딕",Font.PLAIN, 12));
@@ -3809,10 +3839,18 @@ class afterOUT extends JFrame implements ActionListener{
 
 
 class ManageFrame extends JFrame implements ActionListener{
+	
 	JButton Regular  = new JButton("정기권 이용자");
 	JButton Seat  = new JButton("좌석 현황");
 	JButton Locker  = new JButton("사물함");
 	JButton home = new JButton("홈으로");
+	JButton off = new JButton("관리자용");
+	
+	JLabel logo1 = new JLabel("____________________");
+	JLabel logo2 = new JLabel("成均館");
+	JLabel logo3 = new JLabel("스터디카페");
+	JLabel logo4 = new JLabel("Sungkyunkwan StudyCafe");
+	JLabel logo5 = new JLabel("_______________________________");
 	
 	ManageFrame(){
 		getContentPane().setBackground(Color.DARK_GRAY);
@@ -3820,21 +3858,60 @@ class ManageFrame extends JFrame implements ActionListener{
 		setSize(600,650);
 		setLayout(null);
 		
-		Regular.setBounds(90, 200, 120, 120);
+		Regular.setBounds(80, 400, 120, 120);
 		Regular.addActionListener(this);
+		Regular.setBackground(Color.CYAN);
+		Regular.setFont(new Font("HY견고딕",Font.PLAIN, 12));
 		add(Regular);
 		
-		Seat.setBounds(230, 200, 120, 120);
+		Seat.setBounds(230, 400, 120, 120);
 		Seat.addActionListener(this);
+		Seat.setBackground(Color.cyan);
+		Seat.setFont(new Font("HY견고딕",Font.PLAIN, 15));
 		add(Seat);
 		
-		Locker.setBounds(370, 200, 120, 120);
+		Locker.setBounds(380, 400, 120, 120);
 		Locker.addActionListener(this);
+		Locker.setBackground(Color.cyan);
+		Locker.setFont(new Font("HY견고딕",Font.PLAIN, 15));
 		add(Locker);
 		
-		home.setBounds(470, 500, 70, 70);
+		home.setBackground(Color.white);
+		home.setBounds(10,10,70,30);
 		home.addActionListener(this);
+		home.setFont(new Font("HY견고딕",Font.PLAIN, 12));
 		add(home);
+		
+		logo1.setBounds(215,105,400,20);
+		logo1.setFont(new Font("HY견고딕",Font.PLAIN, 15));
+		logo1.setForeground(Color.white);
+		add(logo1);
+		
+		logo2.setBounds(210,130,200,50);
+		logo2.setFont(new Font("HY견고딕",Font.PLAIN, 50));
+		logo2.setForeground(Color.white);
+		add(logo2);
+		
+		logo3.setBounds(190,180,200,40);
+		logo3.setFont(new Font("HY견고딕",Font.PLAIN, 40));
+		logo3.setForeground(Color.white);
+		add(logo3);
+		
+		logo4.setBounds(180,220,300,24);
+		logo4.setFont(new Font("맑은 고딕",Font.ITALIC, 18));
+		logo4.setForeground(Color.white);
+		add(logo4);
+		
+		logo5.setBounds(175,240,500,20);
+		logo5.setFont(new Font("HY견고딕",Font.PLAIN, 15));
+		logo5.setForeground(Color.white);
+		add(logo5);
+		
+		off.setBounds(237, 270, 100, 30);
+		off.addActionListener(this);
+		off.setBackground(Color.LIGHT_GRAY);
+		off.setFont(new Font("HY견고딕",Font.PLAIN, 15));
+		add(off);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -3862,6 +3939,9 @@ class RegularUserFrame extends JFrame implements ActionListener{
 	JLabel[] foruser = new JLabel[100];
 	JLabel aaa;
 	JLabel aaa1;
+	JLabel line = new JLabel("____________________________________");
+	JLabel line2 = new JLabel("____________________________________");
+	JLabel logo4 = new JLabel("Sungkyunkwan StudyCafe");
 	JButton back = new JButton("돌아가기");
 	int y = 160;
 	
@@ -3873,13 +3953,28 @@ class RegularUserFrame extends JFrame implements ActionListener{
 		
 		aaa = new JLabel("정기권 이용자");
 		aaa.setFont(new Font("맑은 고딕",Font.BOLD, 30));
-		aaa.setBounds(180, 10, 400, 100);
+		aaa.setBounds(190, 20, 400, 100);
 		aaa.setForeground(Color.white);
 		
-		aaa1 = new JLabel("번호  전화번호             시작시간                   종료시간");
+		aaa1 = new JLabel("번호   전화번호             시작시간                   종료시간");
 		aaa1.setFont(new Font("맑은 고딕",Font.BOLD, 15));
-		aaa1.setBounds(30, 130, 500, 40);
+		aaa1.setBounds(20, 115, 500, 40);
 		aaa1.setForeground(Color.white);
+		
+		line.setBounds(0, 84,600, 30);
+		line.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		line.setForeground(Color.white);
+		add(line);
+		
+		line2.setBounds(0, 126,600, 30);
+		line2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		line2.setForeground(Color.white);
+		add(line2);
+		
+		logo4.setBounds(390,10,200,20);
+		logo4.setFont(new Font("맑은 고딕",Font.ITALIC, 15));
+		logo4.setForeground(Color.white);
+		add(logo4);
 		
 		add(aaa);
 		add(aaa1);
@@ -3895,11 +3990,13 @@ class RegularUserFrame extends JFrame implements ActionListener{
 			y += 25;
 		}
 		
-		back.setFont(new Font("맑은 고딕",Font.BOLD, 10));
-		back.setBounds(500, 500, 80, 80);
-		back.setBackground(Color.pink);
+		back.setBackground(Color.cyan);
+		back.setBounds(10,10,90,30);
 		back.addActionListener(this);
+		back.setFont(new Font("HY견고딕",Font.PLAIN, 12));
 		add(back);
+		
+		
 		
 	}
 	
@@ -3914,6 +4011,9 @@ class RegularUserFrame extends JFrame implements ActionListener{
 
 class SeatStat extends JFrame implements ActionListener{
 	JButton back = new JButton("돌아가기");
+	JLabel line = new JLabel("____________________________________");
+	JLabel line2 = new JLabel("____________________________________");
+	JLabel logo4 = new JLabel("Sungkyunkwan StudyCafe");
 	JLabel[] forseat = new JLabel[51];
 	JLabel aaa;
 	JLabel aaa1;
@@ -3928,13 +4028,28 @@ class SeatStat extends JFrame implements ActionListener{
 		
 		aaa = new JLabel("좌석 현황");
 		aaa.setFont(new Font("맑은 고딕",Font.BOLD, 30));
-		aaa.setBounds(180, 10, 400, 100);
+		aaa.setBounds(200, 20, 400, 100);
 		aaa.setForeground(Color.white);
 		
-		aaa1 = new JLabel("번호  전화번호             시작시간                   종료시간");
+		aaa1 = new JLabel("번호   전화번호             시작시간                   종료시간");
 		aaa1.setFont(new Font("맑은 고딕",Font.BOLD, 15));
-		aaa1.setBounds(30, 130, 500, 40);
+		aaa1.setBounds(20, 115, 500, 40);
 		aaa1.setForeground(Color.white);
+		
+		line.setBounds(0, 84,600, 30);
+		line.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		line.setForeground(Color.white);
+		add(line);
+		
+		line2.setBounds(0, 126,600, 30);
+		line2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		line2.setForeground(Color.white);
+		add(line2);
+		
+		logo4.setBounds(390,10,200,20);
+		logo4.setFont(new Font("맑은 고딕",Font.ITALIC, 15));
+		logo4.setForeground(Color.white);
+		add(logo4);
 		
 		add(aaa);
 		add(aaa1);
@@ -3952,10 +4067,10 @@ class SeatStat extends JFrame implements ActionListener{
 				y += 25;
 			}
 		}
-		back.setFont(new Font("맑은 고딕",Font.BOLD, 10));
-		back.setBounds(500, 500, 80, 80);
-		back.setBackground(Color.pink);
+		back.setBackground(Color.cyan);
+		back.setBounds(10,10,90,30);
 		back.addActionListener(this);
+		back.setFont(new Font("HY견고딕",Font.PLAIN, 12));
 		add(back);
 		
 	}
@@ -3972,6 +4087,9 @@ class SeatStat extends JFrame implements ActionListener{
 
 class Lockerstat extends JFrame implements ActionListener{
 	JButton back = new JButton("돌아가기");
+	JLabel line = new JLabel("____________________________________");
+	JLabel line2 = new JLabel("____________________________________");
+	JLabel logo4 = new JLabel("Sungkyunkwan StudyCafe");
 	JLabel[] forlocker = new JLabel[100];
 	JLabel aaa;
 	JLabel aaa1;
@@ -3983,16 +4101,30 @@ class Lockerstat extends JFrame implements ActionListener{
 		setSize(600,650);
 		setLayout(null);
 		
-		
 		aaa = new JLabel("사물함 현황");
 		aaa.setFont(new Font("맑은 고딕",Font.BOLD, 30));
-		aaa.setBounds(180, 10, 400, 100);
+		aaa.setBounds(200, 20, 400, 100);
 		aaa.setForeground(Color.white);
 		
-		aaa1 = new JLabel("번호  전화번호               시작시간                   종료시간");
+		aaa1 = new JLabel("번호   전화번호             시작시간                   종료시간");
 		aaa1.setFont(new Font("맑은 고딕",Font.BOLD, 15));
-		aaa1.setBounds(30, 130, 500, 40);
+		aaa1.setBounds(20, 115, 500, 40);
 		aaa1.setForeground(Color.white);
+		
+		line.setBounds(0, 84,600, 30);
+		line.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		line.setForeground(Color.white);
+		add(line);
+		
+		line2.setBounds(0, 126,600, 30);
+		line2.setFont(new Font("맑은고딕",Font.BOLD, 30));
+		line2.setForeground(Color.white);
+		add(line2);
+		
+		logo4.setBounds(390,10,200,20);
+		logo4.setFont(new Font("맑은 고딕",Font.ITALIC, 15));
+		logo4.setForeground(Color.white);
+		add(logo4);
 		
 		add(aaa);
 		add(aaa1);
@@ -4009,10 +4141,10 @@ class Lockerstat extends JFrame implements ActionListener{
 				y += 25;
 			}
 		}
-		back.setFont(new Font("맑은 고딕",Font.BOLD, 10));
-		back.setBounds(500, 500, 80, 80);
-		back.setBackground(Color.pink);
+		back.setBackground(Color.cyan);
+		back.setBounds(10,10,90,30);
 		back.addActionListener(this);
+		back.setFont(new Font("HY견고딕",Font.PLAIN, 12));
 		add(back);
 		
 	}
