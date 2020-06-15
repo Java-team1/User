@@ -1726,14 +1726,14 @@ class ChooseSeat extends JFrame implements ActionListener{
 			number.setText(temp);
 		}
 		else if(input.equals("확인")){
-			int order = 0;
+			int order = -1;
 			
-			for(int i = 1; i < UserData.num; i++) {
+			for(int i = 0; i < UserData.num; i++) {
 				if(UserData.Data[i].number.equals(number.getText()))
 						order = i;
 			}
 			
-			if(order == 0) {
+			if(order == -1) {
 				this.setVisible(false);
 				new WarningFrame2();
 			}
@@ -2541,7 +2541,7 @@ class InsertNumber extends JFrame implements ActionListener{
 	
 	JLabel info = new JLabel("핸드폰 뒤 8자리를 입력하세요");
 	JTextField number = new JTextField();
-	JButton Button0 = new JButton("00");
+	JButton Button0 = new JButton("0");
 	JButton Button1 = new JButton("1");
 	JButton Button2 = new JButton("2");
 	JButton Button3 = new JButton("3");
